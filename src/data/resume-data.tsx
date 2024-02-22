@@ -21,15 +21,15 @@ import { GitHubIcon, LinkedInIcon, FacebookIcon } from "@/components/icons";
 
 export const RESUME_DATA = {
   name: "Pham Tuan Vu",
-  initials: "BJ",
-  location: "Ho Chi Minh City",
-  locationLink: "https://maps.app.goo.gl/7L2jCFL7hcHDZtVx9",
+  initials: "Syuro",
+  location: "Can Tho City",
+  locationLink: "https://maps.app.goo.gl/TXd3FsfHqocvC7b67",
   about:
     "Full Stack Developer focused on building products with extra attention to detail",
   summary:
     "As a Full Stack Developer, I am confident in my ability to take products from the ideation stage to a fully realized solution. Currently, I work mostly with TypeScript, React, Next.js, Node.js, and MongoDB. I am enthusiastic about experimenting with and applying new technologies to continually enhance my skills in the field of web development.",
-  // avatarUrl: "https://avatars.githubusercontent.com/u/1017620?v=4",
-  personalWebsiteUrl: "https://jarocki.me",
+  avatarUrl: "/Vu1.jpg",
+  // personalWebsiteUrl: "https://jarocki.me",
   contact: {
     email: "syuro.dev@outlook.com",
     tel: "+84945466875",
@@ -57,6 +57,7 @@ export const RESUME_DATA = {
       degree: "Information technology",
       start: "2019",
       end: "2023",
+      description: "Here I learned about data structures and algorithms, how to design and build websites with technologies such as HTML, CSS, JS, PHP, MongoDB, mySQL, ..."
     },
   ],
   work: [
@@ -70,6 +71,7 @@ export const RESUME_DATA = {
       end: "07/2023",
       description:
         "Design and implement a service management system. Technologies: React.js, Node.js, Express.js, MongoDB.",
+      repo: "https://github.com/syurodev/service-manager-server.git"
     },
   ],
   skills: [
@@ -82,6 +84,7 @@ export const RESUME_DATA = {
   projects: [
     {
       title: "Wibutime",
+      status: "Unfinished",
       techStack: [
         "Next.js",
         "TypeScript",
@@ -100,6 +103,7 @@ export const RESUME_DATA = {
     },
     {
       title: "Ca Mau OCOP",
+      status: "",
       techStack: [
         "Next.js",
         "TypeScript",

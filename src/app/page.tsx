@@ -1,5 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import { Card, CardHeader, CardContent, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CommandMenu } from "@/components/command-menu";
 import { Metadata } from "next";
@@ -67,7 +67,7 @@ export default function Page() {
                   size="icon"
                   asChild
                 >
-                  <a href={social.url}>
+                  <a href={social.url} target="_blank">
                     <social.icon className="h-4 w-4" />
                   </a>
                 </Button>
@@ -87,10 +87,10 @@ export default function Page() {
             </div>
           </div>
 
-          {/* <Avatar className="h-28 w-28">
-            <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl} />
+          <Avatar className="h-32 w-32">
+            <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl} className="object-cover" />
             <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
-          </Avatar> */}
+          </Avatar>
         </div>
         <Section>
           <h2 className="text-xl font-bold">About</h2>
@@ -110,17 +110,17 @@ export default function Page() {
                         {work.company}
                       </a>
 
-                      <span className="inline-flex gap-x-1">
+                      <div className="inline-flex gap-x-1">
                         {work.badges.map((badge) => (
                           <Badge
-                            variant="secondary"
+                            variant="outline"
                             className="align-middle text-xs"
                             key={badge}
                           >
                             {badge}
                           </Badge>
                         ))}
-                      </span>
+                      </div>
                     </h3>
                     <div className="text-sm tabular-nums text-gray-500">
                       {work.start} - {work.end}
@@ -131,9 +131,20 @@ export default function Page() {
                     {work.title}
                   </h4>
                 </CardHeader>
-                <CardContent className="mt-2 text-xs">
+                <CardContent className="mt-2 text-sm">
                   {work.description}
                 </CardContent>
+                {
+                  work.repo && (
+                    <a
+                      href={work.repo}
+                      className="mt-2 text-xs font-mono text-gray-500"
+                      target="_blank"
+                    >
+                      repo: {work.repo}
+                    </a>
+                  )
+                }
               </Card>
             );
           })}
@@ -146,14 +157,16 @@ export default function Page() {
                 <CardHeader>
                   <div className="flex items-center justify-between gap-x-2 text-base">
                     <h3 className="font-semibold leading-none">
-                      {education.school}
+                      {education.school} <Badge variant={"outline"} className="text-xs font-mono font-light">{education.degree}</Badge>
                     </h3>
                     <div className="text-sm tabular-nums text-gray-500">
                       {education.start} - {education.end}
                     </div>
                   </div>
                 </CardHeader>
-                <CardContent className="mt-2">{education.degree}</CardContent>
+                <CardContent className="mt-2 font-mono text-xs">
+                  {education.description}
+                </CardContent>
               </Card>
             );
           })}
@@ -162,7 +175,7 @@ export default function Page() {
           <h2 className="text-xl font-bold">Skills</h2>
           <div className="flex flex-wrap gap-1">
             {RESUME_DATA.skills.map((skill) => {
-              return <Badge key={skill}>{skill}</Badge>;
+              return <Badge key={skill} variant={"outline"} className="rounded-full">{skill}</Badge>;
             })}
           </div>
         </Section>
@@ -180,6 +193,7 @@ export default function Page() {
                   tags={project.techStack}
                   link={"link" in project ? project.link.href : undefined}
                   repo={"link" in project ? project.link.repo : undefined}
+                  status={project.status}
                 />
               );
             })}
