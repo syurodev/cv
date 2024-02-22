@@ -75,11 +75,15 @@ export const RESUME_DATA = {
     },
   ],
   skills: [
+    "Node.js",
+    "MongoDB",
+    "PostgreSQL",
+    "Drizzle ORM",
+    "Prisma",
     "JavaScript",
     "TypeScript",
     "React/Next.js",
-    "Node.js",
-    "MongoDB"
+    "Tailwind CSS",
   ],
   projects: [
     {
