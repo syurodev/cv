@@ -56,7 +56,7 @@ export const RESUME_DATA = {
       school: "Can Tho University",
       degree: "Information technology",
       start: "2019",
-      end: "2023",
+      end: "2024",
       description: "Here I learned about data structures and algorithms, how to design and build websites with technologies such as HTML, CSS, JS, PHP, MongoDB, mySQL, ..."
     },
   ],
