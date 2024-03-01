@@ -22,8 +22,8 @@ import { GitHubIcon, LinkedInIcon, FacebookIcon } from "@/components/icons";
 export const RESUME_DATA = {
   name: "Pham Tuan Vu",
   initials: "Syuro",
-  location: "Can Tho City",
-  locationLink: "https://maps.app.goo.gl/TXd3FsfHqocvC7b67",
+  location: "Ho Chi Minh City",
+  locationLink: "https://maps.app.goo.gl/quhDCmgYQCQJg6M16",
   about:
     "Full Stack Developer focused on building products with extra attention to detail",
   summary:
