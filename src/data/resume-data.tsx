@@ -78,6 +78,7 @@ export const RESUME_DATA = {
     "Node.js",
     "MongoDB",
     "PostgreSQL",
+    "RESTful API",
     "Drizzle ORM",
     "Prisma",
     "JavaScript",
@@ -92,8 +93,9 @@ export const RESUME_DATA = {
       techStack: [
         "Next.js",
         "TypeScript",
-        "Tailwind CSS",
         "PostgreSQL",
+        "Drizzle ORM",
+        "Tailwind CSS",
         "shadcn/ui",
       ],
       description: "A paid platform for watching anime, manga, and light novels with prominent features such as group viewing, automatic payments, and more.",
