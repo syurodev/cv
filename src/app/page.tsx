@@ -1,7 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Card, CardHeader, CardContent, CardDescription } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CommandMenu } from "@/components/command-menu";
 import { Metadata } from "next";
 import { Section } from "@/components/ui/section";
 import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
@@ -16,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-16">
+    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 md:p-16 print:p-12">
       <section className="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-6">
         <div className="flex items-center justify-between">
           <div className="flex-1 space-y-1.5">
@@ -88,7 +87,11 @@ export default function Page() {
           </div>
 
           <Avatar className="h-32 w-32">
-            <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl} className="object-cover" />
+            <AvatarImage
+              alt={RESUME_DATA.name}
+              src={RESUME_DATA.avatarUrl}
+              className="object-cover"
+            />
             <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
           </Avatar>
         </div>
@@ -134,17 +137,15 @@ export default function Page() {
                 <CardContent className="mt-2 text-sm">
                   {work.description}
                 </CardContent>
-                {
-                  work.repo && (
-                    <a
-                      href={work.repo}
-                      className="mt-2 text-xs font-mono text-gray-500"
-                      target="_blank"
-                    >
-                      repo: {work.repo}
-                    </a>
-                  )
-                }
+                {work.repo && (
+                  <a
+                    href={work.repo}
+                    className="mt-2 font-mono text-xs text-gray-500"
+                    target="_blank"
+                  >
+                    repo: {work.repo}
+                  </a>
+                )}
               </Card>
             );
           })}
@@ -157,7 +158,13 @@ export default function Page() {
                 <CardHeader>
                   <div className="flex items-center justify-between gap-x-2 text-base">
                     <h3 className="font-semibold leading-none">
-                      {education.school} <Badge variant={"outline"} className="text-xs font-mono font-light">{education.degree}</Badge>
+                      {education.school}{" "}
+                      <Badge
+                        variant={"outline"}
+                        className="font-mono text-xs font-light"
+                      >
+                        {education.degree}
+                      </Badge>
                     </h3>
                     <div className="text-sm tabular-nums text-gray-500">
                       {education.start} - {education.end}
@@ -175,7 +182,11 @@ export default function Page() {
           <h2 className="text-xl font-bold">Skills</h2>
           <div className="flex flex-wrap gap-1">
             {RESUME_DATA.skills.map((skill) => {
-              return <Badge key={skill} variant={"outline"} className="rounded-full">{skill}</Badge>;
+              return (
+                <Badge key={skill} variant={"outline"} className="rounded-full">
+                  {skill}
+                </Badge>
+              );
             })}
           </div>
         </Section>
@@ -189,10 +200,10 @@ export default function Page() {
                   key={project.title}
                   title={project.title}
                   description={project.description}
-                  tasks={project.tasks}
+                  tasks={project.tasks as any}
                   tags={project.techStack}
-                  link={"link" in project ? project.link.href : undefined}
-                  repo={"link" in project ? project.link.repo : undefined}
+                  link={"link" in project ? project.link?.href : undefined}
+                  repo={"link" in project ? project.link?.repo : undefined}
                   status={project.status}
                 />
               );
