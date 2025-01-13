@@ -9,7 +9,7 @@ export const RESUME_DATA = {
   about:
     "Full Stack Developer focused on building products with extra attention to detail",
   summary:
-    "As a Full Stack Developer, I am confident in my ability to take products from the ideation stage to a fully realized solution. Currently, I work mostly with TypeScript, React, Next.js, Node.js, and MongoDB. I am enthusiastic about experimenting with and applying new technologies to continually enhance my skills in the field of web development.",
+    "As a Full Stack Developer, I am confident in my ability to take products from the ideation stage to a fully realized solution. Currently, I work mostly with TypeScript, React, Next.js, Node.js, NestJS, MySQL and MongoDB. I am enthusiastic about experimenting with and applying new technologies to continually enhance my skills in the field of web development.",
   avatarUrl: "/Vu1.jpg",
   // personalWebsiteUrl: "https://jarocki.me",
   contact: {
@@ -38,12 +38,24 @@ export const RESUME_DATA = {
       school: "Can Tho University",
       degree: "Information technology",
       start: "2019",
-      end: "now",
+      end: "2023",
       description:
         "Here I learned about data structures and algorithms, how to design and build websites with technologies such as HTML, CSS, JS, PHP, MongoDB, mySQL, ...",
     },
   ],
   work: [
+    {
+      company: "OVERATE-VNTECH COMPANY",
+      link: "https://www.linkedin.com/company/techres-seemt/",
+      badges: ["Backend Developer"],
+      title: "Backend Developer",
+      logo: ParabolLogo,
+      start: "11/03/2024",
+      end: "Present",
+      description:
+        "Implement a backend system for restaurant business operations and outsourcing using technologies such as NodeJS, NestJS, Java, Spring Boot, gRPC, Kafka, Redis, ElasticSearch, MongoDB, MariaDB, SingleStore, and Docker.",
+      repo: "",
+    },
     {
       company: "VNPT Can Tho",
       link: "http://cantho.vnpt.vn/",
@@ -55,18 +67,6 @@ export const RESUME_DATA = {
       description:
         "Design and implement a service management system. Technologies: React.js, Node.js, Express.js, MongoDB.",
       repo: "https://github.com/syurodev/service-manager-server.git",
-    },
-    {
-      company: "Overate-VNtech",
-      link: "",
-      badges: ["Backend Developer"],
-      title: "Backend Developer",
-      logo: ParabolLogo,
-      start: "11/03/2024",
-      end: "now",
-      description:
-        "Implement a backend system for restaurant business operations and outsourcing using technologies such as NodeJS, NestJS, Java, Spring Boot, gRPC, Kafka, Redis, ElasticSearch, MongoDB, MariaDB, SingleStore, and Docker.",
-      repo: "",
     },
   ],
   skills: [
@@ -90,8 +90,32 @@ export const RESUME_DATA = {
   ],
   projects: [
     {
+      title: "DaiHy",
+      status: "",
+      techStack: ["Java", "Spring Boot", "Kafka", "gRPC", "MariaDB", "Docker"],
+      description:
+        "A management system for bookings, event scheduling, purchases, inventory, assets, and more for a wedding banquet restaurant.",
+      tasks: [
+        "Build purchase system for inventory management, allowing purchases based on contracts or request-for-purchase (RFP).",
+        "Implement stock intake functionality for incoming materials.",
+        "Develop stock issuance system for materials and assets.",
+        "Create inventory check features for accurate stock tracking.",
+        "Implement portion control for material distribution in dishes.",
+        "Develop material and asset quantification system for menu items.",
+        "Integrate all inventory-related functions with the purchase and asset management system.",
+        "Implement request-for-purchase (RFP) functionality to handle ad-hoc purchasing needs.",
+        "Add inventory transfer functionality for moving stock between branches.",
+      ],
+      logo: ConsultlyLogo,
+      link: {
+        label: "",
+        repo: "",
+        href: "",
+      },
+    },
+    {
       title: "Supplier/Supplier Report",
-      status: "Is Developing",
+      status: "",
       techStack: [
         "Java",
         "Spring Boot",
@@ -121,8 +145,36 @@ export const RESUME_DATA = {
       },
     },
     {
+      title: "Chiro",
+      status: "",
+      techStack: [
+        "NodeJS",
+        "NestJS",
+        "Kafka",
+        "gRPC",
+        "MariaDB",
+        "SQLServer",
+        "VNPT Invoice",
+        "Docker",
+      ],
+      description:
+        "The system serves the clinic and includes processes for appointment scheduling, consultation procedures, and inventory management.",
+      tasks: [
+        "Develop the `his-connector` service to allow interaction with SQL Server from the Windows app.",
+        "Build the booking system for appointment scheduling and management.",
+        "Integrate VNPT Invoice for electronic invoicing to streamline billing processes.",
+        "Create a Zalo authentication system for user login and verification.",
+      ],
+      logo: ConsultlyLogo,
+      link: {
+        label: "",
+        repo: "",
+        href: "",
+      },
+    },
+    {
       title: "Cofast",
-      status: "Live",
+      status: "",
       techStack: ["NestJS", "Redis", "Kafka", "gRPC", "MariaDB", "SingleStore"],
       description:
         "Cofast Network is an advanced digital freight platform that connects freight forwarders with suppliers in the logistics industry. The system is built with features for transportation management, consolidation, e-commerce, and cross-border services, ensuring high performance, flexibility, and security.",
@@ -137,30 +189,6 @@ export const RESUME_DATA = {
         label: "Cofast network",
         repo: "",
         href: "https://cofastnetwork.com",
-      },
-    },
-    {
-      title: "DaiHy",
-      status: "Canceled",
-      techStack: ["Java", "Spring Boot", "Kafka", "gRPC", "MariaDB", "Docker"],
-      description:
-        "A management system for bookings, event scheduling, purchases, inventory, assets, and more for a wedding banquet restaurant.",
-      tasks: [
-        "Build purchase system for inventory management, allowing purchases based on contracts or request-for-purchase (RFP).",
-        "Implement stock intake functionality for incoming materials.",
-        "Develop stock issuance system for materials and assets.",
-        "Create inventory check features for accurate stock tracking.",
-        "Implement portion control for material distribution in dishes.",
-        "Develop material and asset quantification system for menu items.",
-        "Integrate all inventory-related functions with the purchase and asset management system.",
-        "Implement request-for-purchase (RFP) functionality to handle ad-hoc purchasing needs.",
-        "Add inventory transfer functionality for moving stock between branches.",
-      ],
-      logo: ConsultlyLogo,
-      link: {
-        label: "",
-        repo: "",
-        href: "",
       },
     },
   ],

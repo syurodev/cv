@@ -41,11 +41,11 @@ export function ProjectCard({
                 title
               )}
             </CardTitle>
-            {status && (
-              <Badge variant={"outline"} className="px-2 py-0 text-[10px]">
-                {status}
-              </Badge>
-            )}
+            {/*{status && (*/}
+            {/*  <Badge variant={"outline"} className="px-2 py-0 text-[10px]">*/}
+            {/*    {status}*/}
+            {/*  </Badge>*/}
+            {/*)}*/}
           </div>
           <div className="hidden font-mono text-sm underline print:visible">
             {link?.replace("https://", "").replace("www.", "").replace("/", "")}
