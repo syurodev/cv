@@ -7,9 +7,9 @@ export const RESUME_DATA = {
   location: "Ho Chi Minh City",
   locationLink: "https://maps.app.goo.gl/quhDCmgYQCQJg6M16",
   about:
-    "Full Stack Developer focused on building products with extra attention to detail",
+    "Full Stack Developer with expertise in building scalable, high-performance backend systems and microservices architecture. Passionate about optimizing databases, real-time data processing, and designing efficient APIs.",
   summary:
-    "As a Full Stack Developer, I am confident in my ability to take products from the ideation stage to a fully realized solution. Currently, I work mostly with TypeScript, React, Next.js, Node.js, NestJS, MySQL and MongoDB. I am enthusiastic about experimenting with and applying new technologies to continually enhance my skills in the field of web development.",
+    "With experience in backend and full-stack development, I specialize in building robust, high-performance systems using technologies like NestJS, Spring Boot, Kafka, and gRPC. I have worked on diverse domains, including logistics, healthcare, and restaurant management, where I optimized database queries, integrated real-time data streaming, and implemented scalable microservices. My expertise extends to SQL and NoSQL databases like MariaDB, MongoDB, and SingleStore, ensuring efficient data management. I am always eager to explore new technologies, enhance system efficiency, and contribute to innovative solutions that drive business success.",
   avatarUrl: "/Vu1.jpg",
   // personalWebsiteUrl: "https://jarocki.me",
   contact: {
