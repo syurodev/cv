@@ -90,6 +90,36 @@ export const RESUME_DATA = {
   ],
   projects: [
     {
+      title: "Chiro",
+      status: "",
+      techStack: [
+        "NodeJS",
+        "ReactJS",
+        "NestJS",
+        "Kafka",
+        "gRPC",
+        "MariaDB",
+        "SQLServer",
+        "VNPT Invoice",
+        "Docker",
+      ],
+      description:
+        "The system serves the clinic and includes processes for appointment scheduling, consultation procedures, and inventory management.",
+      tasks: [
+        "Developed the `his-connector` service to facilitate real-time interaction with SQL Server from the Windows application, ensuring seamless data exchange.",
+        "Built an advanced booking system for efficient appointment scheduling and patient management.",
+        "Integrated VNPT Invoice for automated electronic invoicing, streamlining the clinic's billing processes.",
+        "Implemented Zalo authentication for secure user login and verification, enhancing accessibility and security.",
+        "Developed both frontend and backend features for campaign creation and ZNS messaging, enabling effective patient communication."
+      ],
+      logo: ConsultlyLogo,
+      link: {
+        label: "",
+        repo: "",
+        href: "",
+      },
+    },
+    {
       title: "DaiHy",
       status: "",
       techStack: ["Java", "Spring Boot", "Kafka", "gRPC", "MariaDB", "Docker"],
@@ -140,34 +170,6 @@ export const RESUME_DATA = {
       logo: "ConsultlyLogo",
       link: {
         label: "Supplier",
-        repo: "",
-        href: "",
-      },
-    },
-    {
-      title: "Chiro",
-      status: "",
-      techStack: [
-        "NodeJS",
-        "NestJS",
-        "Kafka",
-        "gRPC",
-        "MariaDB",
-        "SQLServer",
-        "VNPT Invoice",
-        "Docker",
-      ],
-      description:
-        "The system serves the clinic and includes processes for appointment scheduling, consultation procedures, and inventory management.",
-      tasks: [
-        "Develop the `his-connector` service to allow interaction with SQL Server from the Windows app.",
-        "Build the booking system for appointment scheduling and management.",
-        "Integrate VNPT Invoice for electronic invoicing to streamline billing processes.",
-        "Create a Zalo authentication system for user login and verification.",
-      ],
-      logo: ConsultlyLogo,
-      link: {
-        label: "",
         repo: "",
         href: "",
       },
