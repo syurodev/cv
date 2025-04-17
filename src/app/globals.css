@@ -78,3 +78,170 @@
 .print-force-new-page {
   page-break-before: always;
 }
+
+@media print {
+  @page {
+    margin: 0.5cm;
+    size: A4 portrait;
+  }
+
+  html,
+  body {
+    width: 210mm;
+    height: 297mm;
+    padding: 10px;
+    font-size: 10px;
+    background: white;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+    overflow: visible !important;
+    page-break-after: avoid;
+  }
+
+  a {
+    text-decoration: none !important;
+    color: black;
+  }
+
+  .print-hidden,
+  [data-vaul-drawer-overlay],
+  [data-vaul-drawer-content],
+  [role="dialog"],
+  .fixed,
+  body.is-printing [data-vaul-drawer-content],
+  body.is-printing [data-vaul-drawer-overlay],
+  body.is-printing [role="dialog"],
+  body.is-printing .fixed {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    position: absolute !important;
+    z-index: -9999 !important;
+  }
+
+  .screen-only {
+    display: inline !important;
+  }
+
+  @media print {
+    .screen-only {
+      display: none !important;
+    }
+  }
+
+  .print-url {
+    display: block;
+    font-size: 10px;
+    color: #666;
+    margin-top: 2px;
+  }
+
+  .print-break-inside-avoid,
+  section,
+  .card,
+  h2,
+  h3 {
+    page-break-inside: avoid;
+  }
+
+  section {
+    margin-bottom: 0.3rem !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .card {
+    margin-bottom: 0.2rem !important;
+    margin-top: 0 !important;
+    padding-top: 0.2rem !important;
+    padding-bottom: 0.2rem !important;
+    break-inside: avoid;
+  }
+
+  .print-m-0 {
+    margin: 0 !important;
+  }
+
+  .print-p-0 {
+    padding: 2px !important;
+  }
+
+  .print-py-1 {
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+  }
+
+  .print-compact-card {
+    padding: 0.5rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .print-compact-section {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .print-compact-text {
+    margin-top: 0 !important;
+    margin-bottom: 0.1rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .print-text-sm {
+    font-size: 0.875rem !important;
+  }
+
+  .print-text-xs {
+    font-size: 0.75rem !important;
+  }
+
+  /* Additional print optimizations */
+  ul,
+  ol {
+    margin: 0 !important;
+    padding-left: 0.8rem !important;
+  }
+
+  li {
+    margin-bottom: 0 !important;
+    line-height: 1.1 !important;
+  }
+
+  p {
+    margin-bottom: 0.05rem !important;
+    line-height: 1.1 !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin-bottom: 0.1rem !important;
+    margin-top: 0.1rem !important;
+    line-height: 1.1 !important;
+  }
+
+  /* Extreme space saving for one-page print */
+  .container {
+    padding: 0.5rem !important;
+  }
+
+  .card {
+    border-radius: 0 !important;
+    border-left: 1px solid #e5e7eb !important;
+    border-right: 1px solid #e5e7eb !important;
+  }
+
+  .avatar {
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+  .flex {
+    gap: 0.2rem !important;
+  }
+
+  .space-y-2 {
+    margin-top: 0 !important;
+  }
+}
