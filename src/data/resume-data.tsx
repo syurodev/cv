@@ -1,5 +1,5 @@
-import { ConsultlyLogo, ParabolLogo } from "@/images/logos";
 import { FacebookIcon, GitHubIcon } from "@/components/icons";
+import { ConsultlyLogo, ParabolLogo } from "@/images/logos";
 
 export const RESUME_DATA = {
   name: "Pham Tuan Vu",
@@ -13,7 +13,7 @@ export const RESUME_DATA = {
   avatarUrl: "/Vu1.jpg",
   // personalWebsiteUrl: "https://jarocki.me",
   contact: {
-    email: "syuro.dev@outlook.com",
+    email: "vupt1908@gmail.com",
     tel: "+84945466875",
     social: [
       {
@@ -110,7 +110,7 @@ export const RESUME_DATA = {
         "Built an advanced booking system for efficient appointment scheduling and patient management.",
         "Integrated VNPT Invoice for automated electronic invoicing, streamlining the clinic's billing processes.",
         "Implemented Zalo authentication for secure user login and verification, enhancing accessibility and security.",
-        "Developed both frontend and backend features for campaign creation and ZNS messaging, enabling effective patient communication."
+        "Developed both frontend and backend features for campaign creation and ZNS messaging, enabling effective patient communication.",
       ],
       logo: ConsultlyLogo,
       link: {
