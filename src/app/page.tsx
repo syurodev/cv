@@ -96,14 +96,14 @@ export default function Page() {
             <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
           </Avatar>
         </div>
-        <Section className="print-compact-section">
+        {/* <Section className="print-compact-section">
           <h2 className="print-compact-text text-xl font-bold print:text-lg">
             About
           </h2>
           <p className="print-compact-text text-pretty font-mono text-sm text-muted-foreground print:text-xs print:text-black">
             {RESUME_DATA.summary}
           </p>
-        </Section>
+        </Section> */}
         <Section className="print-compact-section">
           <h2 className="print-compact-text text-xl font-bold print:text-lg">
             Work Experience
