@@ -23,7 +23,7 @@ export function ProjectCard({
   const tasksArray = Array.isArray(tasks) ? tasks : [tasks];
 
   return (
-    <Card className="print-compact-card print-compact-card flex flex-col overflow-hidden border border-muted p-3 print:mx-3 print:break-inside-avoid print:border print:border-l print:border-r print:border-gray-300">
+    <Card className="print-compact-card print-compact-card flex flex-col overflow-hidden border border-muted p-3 print:break-inside-avoid print:border print:border-l print:border-r print:border-gray-300">
       <CardHeader className="print:px-2 print:py-1">
         <div className="space-y-1">
           <div className="flex gap-2">
@@ -55,11 +55,11 @@ export function ProjectCard({
               {link.replace("https://", "").replace("www.", "")}
             </div>
           )}
-          <CardContent className="print-compact-text font-mono text-sm print:px-2 print:py-0 print:text-xs print:text-black">
+          <CardContent className="print-compact-text font-mono text-sm print:px-2 print:py-0 print:text-sm print:text-black">
             <strong>Description: </strong>
             {description}
           </CardContent>
-          <CardContent className="print-compact-text font-mono text-sm print:px-2 print:py-0 print:text-xs">
+          <CardContent className="print-compact-text font-mono text-sm print:px-2 print:py-0 print:text-sm">
             <strong className="print:text-black">Tasks: </strong>
             {tasksArray.map((x, index) => (
               <p

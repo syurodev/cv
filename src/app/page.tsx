@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="container relative mx-auto scroll-my-12 overflow-auto px-9 py-4 md:p-16 print:m-0 print:p-8">
+    <main className="container relative mx-auto scroll-my-12 overflow-auto px-9 py-4 md:p-16 print:m-0 print:p-6">
       <section className="mx-auto w-full max-w-2xl space-y-8 bg-white print:max-w-full print:space-y-2">
         <div className="flex items-center justify-between">
           <div className="flex-1 space-y-1.5">
@@ -87,14 +87,21 @@ export default function Page() {
             </div>
           </div>
 
-          <Avatar className="h-32 w-32 print:h-20 print:w-20">
-            <AvatarImage
-              alt={RESUME_DATA.name}
-              src={RESUME_DATA.avatarUrl}
-              className="object-cover"
+          <div className="flex items-center gap-x-4">
+            <Avatar className="h-32 w-32 print:h-20 print:w-20">
+              <AvatarImage
+                alt={RESUME_DATA.name}
+                src={RESUME_DATA.avatarUrl}
+                className="object-cover"
+              />
+              <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
+            </Avatar>
+            <img
+              src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://cv-roan-theta-56.vercel.app"
+              alt="QR Code"
+              className="hidden h-20 w-20 print:block"
             />
-            <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
-          </Avatar>
+          </div>
         </div>
         {/* <Section className="print-compact-section">
           <h2 className="print-compact-text text-xl font-bold print:text-lg">
@@ -142,7 +149,7 @@ export default function Page() {
                     {work.title}
                   </h4>
                 </CardHeader>
-                <CardContent className="mt-2 text-sm print:text-xs print:text-black">
+                <CardContent className="mt-2 text-sm print:text-sm print:text-black">
                   {work.description}
                 </CardContent>
                 {work.repo && (
@@ -184,7 +191,7 @@ export default function Page() {
                     </div>
                   </div>
                 </CardHeader>
-                <CardContent className="mt-2 font-mono text-xs print:text-black">
+                <CardContent className="mt-2 font-mono text-xs print:text-sm print:text-black">
                   {education.description}
                 </CardContent>
               </Card>
