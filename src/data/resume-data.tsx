@@ -74,7 +74,7 @@ export const RESUME_DATA = {
             "Docker",
           ],
           description:
-            "A management system for bookings, event scheduling, purchases, inventory, assets, and more for a wedding banquet restaurant.",
+            "A comprehensive ERP system tailored for a wedding banquet restaurant, managing bookings, event scheduling, purchasing, inventory, and assets.",
           tasks: [
             "Developed a desktop application for ZKTeco device management, integrating a frontend (React, Tauri/Rust) with a backend API (Flask/Python).",
             "Designed and implemented a multi-level approval workflow for procurement, streamlining the purchasing process across departments.",
@@ -105,7 +105,7 @@ export const RESUME_DATA = {
             "Docker",
           ],
           description:
-            "The system serves the clinic and includes processes for appointment scheduling, consultation procedures, and inventory management.",
+            "A specialized Clinic ERP system that handles appointment scheduling, consultation procedures, and inventory management.",
           tasks: [
             "Developed the `his-connector` microservice to ensure seamless, real-time data synchronization with the main web-based Hospital Information System (HIS).",
             "Built an advanced booking system for efficient appointment scheduling and patient management.",
