@@ -5,7 +5,7 @@ interface Props {
   title: string;
   description: string;
   tags: readonly string[];
-  tasks: string | string[];
+  tasks: string | readonly string[];
   link?: string;
   repo?: string;
   status?: string;
