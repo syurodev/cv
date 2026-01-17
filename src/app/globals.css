@@ -60,7 +60,7 @@
 @media print {
   @page {
     size: A4 portrait;
-    margin: 15mm; /* Set standard safe margins for printers */
+    margin: 10mm; /* Set standard safe margins for printers */
   }
 
   html,
