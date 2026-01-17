@@ -26,7 +26,7 @@ export function ProjectCard({
   const tasksArray = Array.isArray(tasks) ? tasks : [tasks];
 
   return (
-    <div className={`relative pb-6 pl-6 ${isLast ? "pb-0" : ""}`}>
+    <div className={`relative pb-6 pl-6 print:pb-2 ${isLast ? "pb-0" : ""}`}>
       {/* Timeline Line */}
       <div
         className={`absolute left-0 w-px border-l border-dashed border-gray-300 print:border-black ${
@@ -35,12 +35,12 @@ export function ProjectCard({
       />
 
       {/* Timeline Dot */}
-      <div className="print-force-bg absolute -left-[4.5px] top-1.5 h-2.5 w-2.5 rounded-full border border-gray-400 bg-white print:border-black" />
+      <div className="print-force-bg absolute -left-[4.5px] top-1.5 h-2.5 w-2.5 rounded-full border border-gray-400 bg-white print:-left-[4px] print:h-2 print:w-2 print:border-black" />
 
-      <div className="flex flex-col space-y-2">
+      <div className="flex flex-col space-y-2 print:space-y-1">
         {/* Title & Badge */}
         <div className="flex items-center gap-2">
-          <h3 className="text-base font-semibold leading-none">
+          <h3 className="text-base font-semibold leading-none print:text-sm">
             {link ? (
               <a
                 href={link}
@@ -55,14 +55,17 @@ export function ProjectCard({
             )}
           </h3>
           {status && (
-            <Badge variant="outline" className="px-1.5 py-0 text-[10px]">
+            <Badge
+              variant="outline"
+              className="px-1.5 py-0 text-[10px] print:px-1 print:py-0 print:text-[9px]"
+            >
               {status}
             </Badge>
           )}
         </div>
 
         {/* Links (Repo/Demo) - Subtext style */}
-        <div className="flex gap-4 text-xs text-muted-foreground print:text-black">
+        <div className="flex gap-4 text-xs text-muted-foreground print:gap-2 print:text-[10px] print:text-black">
           {repo && (
             <div className="flex gap-1">
               <span className="font-semibold text-foreground/80 print:text-black">
@@ -86,17 +89,17 @@ export function ProjectCard({
         </div>
 
         {/* Description */}
-        <div className="text-pretty font-mono text-sm text-muted-foreground print:text-sm print:text-black">
+        <div className="text-pretty font-mono text-sm text-muted-foreground print:text-xs print:leading-tight print:text-black">
           {description}
         </div>
 
         {/* Tasks */}
         {tasksArray.length > 0 && (
-          <div className="text-pretty font-mono text-sm text-foreground/80 print:text-sm print:text-black">
-            <ul className="list-none space-y-1">
+          <div className="text-pretty font-mono text-sm text-foreground/80 print:text-[11px] print:leading-tight print:text-black">
+            <ul className="list-none space-y-1 print:space-y-0.5">
               {tasksArray.map((task, index) => (
                 <li key={index} className="flex items-start gap-2">
-                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-foreground/60 print:bg-black" />
+                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-foreground/60 print:mt-1 print:h-0.5 print:w-0.5 print:bg-black" />
                   <span>{task}</span>
                 </li>
               ))}
@@ -110,7 +113,7 @@ export function ProjectCard({
             <Badge
               key={tag}
               variant="secondary"
-              className="rounded-md bg-secondary/50 px-1 py-0 text-[10px] text-secondary-foreground print:border print:border-gray-200 print:bg-gray-100 print:text-black"
+              className="rounded-md bg-secondary/50 px-1 py-0 text-[10px] text-secondary-foreground print:border print:border-gray-200 print:bg-gray-100 print:px-1 print:py-0 print:text-[9px] print:text-black"
             >
               {tag}
             </Badge>

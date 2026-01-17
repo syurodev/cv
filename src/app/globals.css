@@ -60,11 +60,12 @@
 @media print {
   @page {
     size: A4 portrait;
-    margin: 10mm; /* Set standard safe margins for printers */
+    margin: 15mm 0 15mm 0; /* Top/Bottom margins for every page. Sides 0. */
   }
 
   html,
   body {
+    padding: 0 15mm; /* Side padding only */
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
     width: auto !important;
@@ -72,7 +73,6 @@
     overflow: visible !important;
     background-color: white !important;
     margin: 0 !important;
-    padding: 0 !important;
   }
 
   .cv-container {
