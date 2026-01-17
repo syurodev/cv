@@ -1,5 +1,4 @@
 import { Badge } from "./ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 
 interface Props {
   title: string;
@@ -9,6 +8,8 @@ interface Props {
   link?: string;
   repo?: string;
   status?: string;
+  isFirst?: boolean;
+  isLast?: boolean;
 }
 
 export function ProjectCard({
@@ -19,102 +20,103 @@ export function ProjectCard({
   repo,
   tasks,
   status,
+  isFirst = false,
+  isLast = false,
 }: Props) {
   const tasksArray = Array.isArray(tasks) ? tasks : [tasks];
 
   return (
-    <Card className="print-compact-card print-compact-card flex flex-col overflow-hidden border border-muted p-3 print:break-inside-avoid print:border print:border-l print:border-r print:border-gray-300">
-      <CardHeader className="print:px-2 print:py-1">
-        <div className="space-y-1">
-          <div className="flex gap-2">
-            <CardTitle className="text-base">
-              {link ? (
-                <a
-                  href={link}
-                  target="_blank"
-                  className="inline-flex items-center gap-1 hover:underline print:font-semibold print:no-underline"
-                >
-                  {title}{" "}
-                  <span className="h-1 w-1 rounded-full bg-green-500 print:hidden"></span>
-                </a>
-              ) : (
-                title
-              )}
-            </CardTitle>
-            {status && (
-              <Badge
-                variant={"outline"}
-                className="px-2 py-0 text-[10px] print:border-gray-400"
+    <div className={`relative pb-6 pl-6 ${isLast ? "pb-0" : ""}`}>
+      {/* Timeline Line */}
+      <div
+        className={`absolute left-0 w-px border-l border-dashed border-gray-300 print:border-black ${
+          isFirst ? "top-2" : "top-0"
+        } bottom-0`}
+      />
+
+      {/* Timeline Dot */}
+      <div className="print-force-bg absolute -left-[4.5px] top-1.5 h-2.5 w-2.5 rounded-full border border-gray-400 bg-white print:border-black" />
+
+      <div className="flex flex-col space-y-2">
+        {/* Title & Badge */}
+        <div className="flex items-center gap-2">
+          <h3 className="text-base font-semibold leading-none">
+            {link ? (
+              <a
+                href={link}
+                target="_blank"
+                className="inline-flex items-center gap-1 hover:underline"
               >
-                {status}
-              </Badge>
+                {title}
+                <span className="h-1.5 w-1.5 rounded-full bg-green-500 print:hidden"></span>
+              </a>
+            ) : (
+              title
             )}
-          </div>
-          {link && (
-            <div className="hidden font-mono text-xs text-gray-500 print:hidden">
-              {link.replace("https://", "").replace("www.", "")}
+          </h3>
+          {status && (
+            <Badge variant="outline" className="px-1.5 py-0 text-[10px]">
+              {status}
+            </Badge>
+          )}
+        </div>
+
+        {/* Links (Repo/Demo) - Subtext style */}
+        <div className="flex gap-4 text-xs text-muted-foreground print:text-black">
+          {repo && (
+            <div className="flex gap-1">
+              <span className="font-semibold text-foreground/80 print:text-black">
+                Github:
+              </span>
+              <a href={repo} target="_blank" className="hover:underline">
+                {repo.replace("https://", "").replace("www.", "")}
+              </a>
             </div>
           )}
-          <CardContent className="print-compact-text font-mono text-sm print:px-2 print:py-0 print:text-sm print:text-black">
-            <strong>Description: </strong>
-            {description}
-          </CardContent>
-          <CardContent className="print-compact-text font-mono text-sm print:px-2 print:py-0 print:text-sm">
-            <strong className="print:text-black">Tasks: </strong>
-            {tasksArray.map((x, index) => (
-              <p
-                key={title + "task" + index}
-                className="print-compact-text ms-4 print:text-black"
-              >
-                - {x}
-              </p>
-            ))}
-          </CardContent>
-        </div>
-      </CardHeader>
-      <CardContent className="mt-1 flex flex-col print:mt-0 print:px-2 print:py-0">
-        <div className="flex flex-col font-mono text-sm print:text-xs">
-          <div className="flex gap-1 print:text-black">
-            <span className="font-semibold">Github:</span>
-            {repo ? (
-              <a href={repo} target="_blank" className="print:no-underline">
-                <span className="screen-only">{repo || "private"}</span>
-                <span className="hidden print:inline">
-                  {repo?.replace("https://", "").replace("www.", "") ||
-                    "private"}
-                </span>
+          {link && (
+            <div className="flex gap-1">
+              <span className="font-semibold text-foreground/80 print:text-black">
+                Demo:
+              </span>
+              <a href={link} target="_blank" className="hover:underline">
+                {link.replace("https://", "").replace("www.", "")}
               </a>
-            ) : (
-              "private"
-            )}
-          </div>
-          <div className="flex gap-1 print:text-black">
-            <span className="font-semibold">Demo:</span>
-            {link ? (
-              <a href={link} target="_blank" className="print:no-underline">
-                <span className="screen-only">{link || "private"}</span>
-                <span className="hidden print:inline">
-                  {link?.replace("https://", "").replace("www.", "") ||
-                    "private"}
-                </span>
-              </a>
-            ) : (
-              "private"
-            )}
-          </div>
+            </div>
+          )}
         </div>
-        <div className="mt-2 flex flex-wrap gap-1 print:mt-0 print:gap-0.5">
+
+        {/* Description */}
+        <div className="text-pretty font-mono text-sm text-muted-foreground print:text-sm print:text-black">
+          {description}
+        </div>
+
+        {/* Tasks */}
+        {tasksArray.length > 0 && (
+          <div className="text-pretty font-mono text-sm text-foreground/80 print:text-sm print:text-black">
+            <ul className="list-none space-y-1">
+              {tasksArray.map((task, index) => (
+                <li key={index} className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-foreground/60 print:bg-black" />
+                  <span>{task}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* Tags */}
+        <div className="flex flex-wrap gap-1">
           {tags.map((tag) => (
             <Badge
               key={tag}
-              variant={"outline"}
-              className="rounded-full print:border-gray-300 print:bg-gray-100 print:text-black"
+              variant="secondary"
+              className="rounded-md bg-secondary/50 px-1 py-0 text-[10px] text-secondary-foreground print:border print:border-gray-200 print:bg-gray-100 print:text-black"
             >
               {tag}
             </Badge>
           ))}
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 }

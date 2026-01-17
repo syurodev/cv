@@ -62,15 +62,15 @@ export const RESUME_DATA = {
           techStack: [
             "Java",
             "Spring Boot",
-            "Python",
-            "Flask",
-            "Rust",
+            "NestJS",
             "Tauri",
             "React",
             "Kafka",
             "gRPC",
             "MariaDB",
             "SQLite",
+            "Redis",
+            "Microservices",
             "Docker",
           ],
           description:
@@ -129,7 +129,8 @@ export const RESUME_DATA = {
             "Kafka",
             "gRPC",
             "MariaDB",
-            "SingleStore",
+            "ElasticSearch",
+            "Microservices",
           ],
           description:
             "Cofast Network is an advanced digital freight platform that connects freight forwarders with suppliers in the logistics industry. The system is built with features for transportation management, consolidation, e-commerce, and cross-border services, ensuring high performance, flexibility, and security.",

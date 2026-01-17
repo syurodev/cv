@@ -59,13 +59,22 @@
 
 @media print {
   @page {
-    size: A4;
-    margin: 0;
+    size: A4 portrait;
+    margin: 15mm; /* Set standard safe margins for printers */
   }
+
+  html,
   body {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+    width: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+    background-color: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
+
   .cv-container {
     width: 210mm;
     height: 297mm;
@@ -74,7 +83,25 @@
     overflow: hidden;
     display: block !important;
   }
+
+  /* Reset tailwind container */
+  .container {
+    max-width: none !important;
+    width: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
   .no-print {
+    display: none !important;
+  }
+
+  .print-force-bg {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background-color: white !important;
+  }
+  [data-vaul-overlay] {
     display: none !important;
   }
 }

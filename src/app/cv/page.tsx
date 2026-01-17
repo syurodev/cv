@@ -16,8 +16,8 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="container relative mx-auto scroll-my-12 overflow-auto px-9 py-4 md:p-16 print:m-0 print:p-6">
-      <section className="mx-auto w-full max-w-2xl space-y-8 bg-white print:max-w-full print:space-y-2">
+    <main className="container relative mx-auto scroll-my-12 px-9 py-4 md:p-16 print:static print:m-0 print:block print:h-auto print:min-h-0 print:w-full print:max-w-none print:overflow-visible print:p-0">
+      <section className="mx-auto w-full max-w-2xl space-y-8 bg-white print:w-full print:max-w-none print:space-y-4">
         <div className="flex items-center justify-between">
           <div className="flex-1 space-y-1.5">
             <h1 className="text-2xl font-bold">{RESUME_DATA.name}</h1>
@@ -96,11 +96,6 @@ export default function Page() {
               />
               <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
             </Avatar>
-            <img
-              src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://cv-roan-theta-56.vercel.app"
-              alt="QR Code"
-              className="hidden h-20 w-20 print:block"
-            />
           </div>
         </div>
         {/* <Section className="print-compact-section">
@@ -117,10 +112,7 @@ export default function Page() {
           </h2>
           {RESUME_DATA.work.map((work) => {
             return (
-              <Card
-                key={work.company}
-                className="print-break-inside-avoid print-compact-card "
-              >
+              <Card key={work.company} className="print-compact-card">
                 <CardHeader className="print:py-1">
                   <div className="flex items-center justify-between gap-x-2 text-base">
                     <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none">
@@ -162,8 +154,8 @@ export default function Page() {
                   </a>
                 )}
                 {"projects" in work && work.projects && (
-                  <div className="mt-4 grid grid-cols-1 gap-3 print:grid-cols-2">
-                    {work.projects.map((project) => (
+                  <div className="mt-4 flex flex-col pl-2">
+                    {work.projects.map((project, index) => (
                       <ProjectCard
                         key={project.title}
                         title={project.title}
@@ -177,6 +169,8 @@ export default function Page() {
                           "link" in project ? project.link?.repo : undefined
                         }
                         status={project.status}
+                        isFirst={index === 0}
+                        isLast={index === (work.projects?.length ?? 0) - 1}
                       />
                     ))}
                   </div>
@@ -242,21 +236,25 @@ export default function Page() {
             <h2 className="print-compact-text text-xl font-bold print:text-lg">
               Projects
             </h2>
-            <div className="-mx-3 flex flex-col gap-3">
-              {(RESUME_DATA.projects as readonly any[]).map((project) => {
-                return (
-                  <ProjectCard
-                    key={project.title}
-                    title={project.title}
-                    description={project.description}
-                    tasks={project.tasks as any}
-                    tags={project.techStack}
-                    link={"link" in project ? project.link?.href : undefined}
-                    repo={"link" in project ? project.link?.repo : undefined}
-                    status={project.status}
-                  />
-                );
-              })}
+            <div className="-mx-3 flex flex-col pl-3">
+              {(RESUME_DATA.projects as readonly any[]).map(
+                (project, index) => {
+                  return (
+                    <ProjectCard
+                      key={project.title}
+                      title={project.title}
+                      description={project.description}
+                      tasks={project.tasks as any}
+                      tags={project.techStack}
+                      link={"link" in project ? project.link?.href : undefined}
+                      repo={"link" in project ? project.link?.repo : undefined}
+                      status={project.status}
+                      isFirst={index === 0}
+                      isLast={index === RESUME_DATA.projects.length - 1}
+                    />
+                  );
+                },
+              )}
             </div>
           </Section>
         )}
