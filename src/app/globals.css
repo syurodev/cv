@@ -75,12 +75,13 @@
     margin: 0 !important;
   }
 
+  /* CV container - allow natural flow */
   .cv-container {
-    width: 210mm;
-    height: 297mm;
+    width: auto;
+    height: auto;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow: visible !important;
     display: block !important;
   }
 
@@ -103,5 +104,36 @@
   }
   [data-vaul-overlay] {
     display: none !important;
+  }
+
+  /* Allow page breaks inside sections */
+  section {
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  /* Prevent breaking inside individual cards/items */
+  .print-break-inside-avoid {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Allow content to flow naturally */
+  .space-y-6,
+  .space-y-8,
+  .flex-col {
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  /* Prevent orphans and widows */
+  p,
+  li,
+  h1,
+  h2,
+  h3,
+  h4 {
+    orphans: 2;
+    widows: 2;
   }
 }

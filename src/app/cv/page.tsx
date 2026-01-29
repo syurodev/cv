@@ -2,8 +2,6 @@ import { PrintDrawer } from "@/components/print-drawer";
 import { ProjectCard } from "@/components/project-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Section } from "@/components/ui/section";
 import { RESUME_DATA } from "@/data/resume-data";
 import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
 import { Metadata } from "next";
@@ -15,15 +13,19 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="container relative mx-auto scroll-my-12 px-9 py-4 md:p-16 print:static print:m-0 print:block print:h-auto print:min-h-0 print:w-full print:max-w-none print:overflow-visible print:p-0">
-      <section className="mx-auto w-full max-w-4xl space-y-8 bg-white print:space-y-4">
-        <div className="flex items-center justify-between">
+    <main className="container relative mx-auto scroll-my-12 px-9 py-4 md:p-16 print:m-0 print:block print:w-full print:max-w-none print:p-0">
+      <article className="mx-auto w-full max-w-4xl bg-white print:max-w-none">
+        {/* Header */}
+        <header className="mb-6 flex items-center justify-between print:mb-4">
           <div className="flex-1 space-y-1.5">
             <h1 className="text-2xl font-bold">{RESUME_DATA.name}</h1>
-            <p className="max-w-md text-pretty font-mono text-sm text-muted-foreground print:text-black">
+            <p className="max-w-md text-pretty  text-base text-gray-900 print:text-black">
               {RESUME_DATA.about}
             </p>
-            <p className="max-w-md items-center text-pretty font-mono text-xs text-muted-foreground">
+            <p className="max-w-md text-pretty text-base text-gray-900 print:text-black">
+              <span className="font-bold">Goal:</span> {RESUME_DATA.goal}
+            </p>
+            <p className="max-w-md items-center text-pretty  text-xs text-gray-900">
               <a
                 className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
                 href={RESUME_DATA.locationLink}
@@ -33,7 +35,7 @@ export default function Page() {
                 {RESUME_DATA.location}
               </a>
             </p>
-            <div className="flex gap-x-1 pt-1 font-mono text-sm text-muted-foreground print:hidden">
+            <div className="flex gap-x-1 pt-1  text-sm text-gray-900 print:hidden">
               {RESUME_DATA.contact.email ? (
                 <Button
                   className="h-8 w-8"
@@ -72,7 +74,7 @@ export default function Page() {
                 </Button>
               ))}
             </div>
-            <div className="hidden flex-col gap-x-1 font-mono text-sm text-muted-foreground print:flex">
+            <div className="hidden flex-col gap-x-1  text-sm text-gray-900 print:flex">
               {RESUME_DATA.contact.email ? (
                 <a href={`mailto:${RESUME_DATA.contact.email}`}>
                   <span className="underline">{RESUME_DATA.contact.email}</span>
@@ -96,185 +98,108 @@ export default function Page() {
               <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
             </Avatar>
           </div>
+        </header>
+
+        {/* Skills */}
+        <div className="mb-6 print:mb-4">
+          <h2 className="mb-3 text-xl font-bold print:mb-2 print:text-lg">
+            Skills
+          </h2>
+          {Object.entries(RESUME_DATA.skills).map(([category, skills]) => (
+            <p key={category} className="mb-1 text-base print:mb-0.5">
+              <span className="font-semibold">{category}:</span>{" "}
+              <span className="text-gray-900">{skills.join(", ")}</span>
+            </p>
+          ))}
         </div>
 
-        {/* 2-Column Layout */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3 print:grid-cols-3">
-          {/* Left Column: Skills & Education */}
-          <div className="col-span-1 space-y-6">
-            {/* Skills */}
-            <Section className="print-compact-section">
-              <h2 className="print-compact-text text-xl font-bold print:text-lg">
-                Skills
-              </h2>
-              <div className="space-y-3">
-                {Object.entries(RESUME_DATA.skills).map(
-                  ([category, skills]) => (
-                    <div key={category}>
-                      <h3 className="mb-1 text-sm font-semibold print:text-black">
-                        {category}
-                      </h3>
-                      <ul className="ml-5 list-disc space-y-1 text-sm print:text-black">
-                        {skills.map((skill) => (
-                          <li
-                            key={skill}
-                            className="text-gray-700 print:text-black"
-                          >
-                            {skill}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ),
-                )}
+        {/* Work Experience */}
+        <div className="mb-6 print:mb-4">
+          <h2 className="mb-3 text-xl font-bold print:mb-2 print:text-lg">
+            Work Experience
+          </h2>
+          {RESUME_DATA.work.map((work) => (
+            <div key={work.company} className="mb-4 print:mb-3">
+              <div className="flex items-center justify-between text-base">
+                <h3 className="font-semibold">
+                  <a className="hover:underline" href={work.link}>
+                    {work.company}
+                  </a>
+                </h3>
+                <span className="tabular-nums text-gray-900">
+                  {work.start} - {work.end}
+                </span>
               </div>
-            </Section>
+              <p className=" text-base">{work.title}</p>
 
-            {/* Education */}
-            <Section className="print-compact-section print:break-before-page">
-              <h2 className="print-compact-text text-xl font-bold print:text-lg">
-                Education
-              </h2>
-              {RESUME_DATA.education.map((education) => {
-                return (
-                  <Card
-                    key={education.school}
-                    className="print-break-inside-avoid print-compact-card flex flex-col"
-                  >
-                    <CardHeader className="print:py-1">
-                      <div className="flex flex-col gap-y-1 text-base">
-                        <h3 className="font-semibold leading-none">
-                          {education.school}
-                        </h3>
-                        <div className="text-sm text-gray-500">
-                          {education.start} - {education.end}
-                        </div>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="mt-2 font-mono text-xs print:text-sm print:text-black">
-                      {education.degree}
-                    </CardContent>
-                  </Card>
-                );
-              })}
-            </Section>
-          </div>
+              {work.repo && (
+                <a
+                  href={work.repo}
+                  className="mt-1 block  text-xs text-gray-900"
+                  target="_blank"
+                >
+                  repo: {work.repo}
+                </a>
+              )}
 
-          {/* Right Column: Work Experience & Projects */}
-          <div className="col-span-2 space-y-6">
-            {/* Work Experience */}
-            <Section className="print-compact-section">
-              <h2 className="print-compact-text text-xl font-bold print:text-lg">
-                Work Experience
-              </h2>
-              {RESUME_DATA.work.map((work) => {
-                return (
-                  <Card key={work.company} className="print-compact-card">
-                    <CardHeader className="print:py-1">
-                      <div className="flex items-center justify-between gap-x-2 text-base">
-                        <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none">
-                          <a className="hover:underline" href={work.link}>
-                            {work.company}
-                          </a>
-                        </h3>
-                        <div className="text-sm tabular-nums text-gray-500">
-                          {work.start} - {work.end}
-                        </div>
-                      </div>
-
-                      <h4 className="font-mono text-sm leading-none">
-                        {work.title}
-                      </h4>
-                    </CardHeader>
-                    <CardContent className="mt-2 text-sm print:text-sm print:text-black">
-                      {work.description}
-                    </CardContent>
-                    {work.repo && (
-                      <a
-                        href={work.repo}
-                        className="mt-2 font-mono text-xs text-gray-500 print:text-black"
-                        target="_blank"
-                      >
-                        repo: {work.repo}
-                      </a>
-                    )}
-                    {"projects" in work && work.projects && (
-                      <div className="mt-4 flex flex-col pl-2">
-                        {work.projects.map((project, index) => (
-                          <ProjectCard
-                            key={project.title}
-                            title={project.title}
-                            description={project.description}
-                            tasks={project.tasks}
-                            tags={project.techStack}
-                            link={
-                              "link" in project ? project.link?.href : undefined
-                            }
-                            repo={
-                              "link" in project ? project.link?.repo : undefined
-                            }
-                            status={project.status}
-                            isFirst={index === 0}
-                            isLast={index === (work.projects?.length ?? 0) - 1}
-                          />
-                        ))}
-                      </div>
-                    )}
-                  </Card>
-                );
-              })}
-            </Section>
-
-            {/* Projects */}
-            {RESUME_DATA.projects.length > 0 && (
-              <Section className="print-compact-section scroll-mb-16 print:mt-2">
-                <h2 className="print-compact-text text-xl font-bold print:text-lg">
-                  Projects
-                </h2>
-                <div className="-mx-3 flex flex-col pl-3">
-                  {(RESUME_DATA.projects as readonly any[]).map(
-                    (project, index) => {
-                      return (
-                        <ProjectCard
-                          key={project.title}
-                          title={project.title}
-                          description={project.description}
-                          tasks={project.tasks as any}
-                          tags={project.techStack}
-                          link={
-                            "link" in project ? project.link?.href : undefined
-                          }
-                          repo={
-                            "link" in project ? project.link?.repo : undefined
-                          }
-                          status={project.status}
-                          isFirst={index === 0}
-                          isLast={index === RESUME_DATA.projects.length - 1}
-                        />
-                      );
-                    },
-                  )}
+              {"projects" in work && work.projects && (
+                <div className="mt-3 pl-2">
+                  {work.projects.map((project, index) => (
+                    <ProjectCard
+                      key={project.title}
+                      title={project.title}
+                      description={project.description}
+                      tasks={project.tasks}
+                      tags={project.techStack}
+                      link={"link" in project ? project.link?.href : undefined}
+                      repo={"link" in project ? project.link?.repo : undefined}
+                      status={project.status}
+                      isFirst={index === 0}
+                      isLast={index === (work.projects?.length ?? 0) - 1}
+                    />
+                  ))}
                 </div>
-              </Section>
-            )}
-          </div>
+              )}
+            </div>
+          ))}
         </div>
-      </section>
+
+        {/* Education */}
+        <div className="mb-6 print:mb-4">
+          <h2 className="mb-3 text-xl font-bold print:mb-2 print:text-lg">
+            Education
+          </h2>
+          {RESUME_DATA.education.map((education) => (
+            <div key={education.school} className="mb-2">
+              <h3 className="text-base font-semibold">{education.school}</h3>
+              <p className="text-base text-gray-900">
+                {education.start} - {education.end}
+              </p>
+              <p className=" text-sm">{education.degree}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* References */}
+        {RESUME_DATA.references && RESUME_DATA.references.length > 0 && (
+          <div className="mb-6 print:mb-4">
+            <h2 className="mb-3 text-xl font-bold print:mb-2 print:text-lg">
+              References
+            </h2>
+            {RESUME_DATA.references.map((ref) => (
+              <div key={ref.name} className="mb-2">
+                <h3 className="text-base font-semibold">{ref.name}</h3>
+                <p className="text-base text-gray-900">{ref.title}</p>
+                <p className="text-sm text-gray-900">
+                  Phone: {ref.phone ?? ""}
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
+      </article>
 
       <PrintDrawer />
-
-      {/* <CommandMenu
-        links={[
-          {
-            url: RESUME_DATA.personalWebsiteUrl,
-            title: "Personal Website",
-          },
-          ...RESUME_DATA.contact.social.map((socialMediaLink) => ({
-            url: socialMediaLink.url,
-            title: socialMediaLink.name,
-          })),
-        ]}
-      /> */}
     </main>
   );
 }

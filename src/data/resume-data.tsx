@@ -7,7 +7,8 @@ export const RESUME_DATA = {
   location: "Ho Chi Minh City",
   locationLink: "https://maps.app.goo.gl/quhDCmgYQCQJg6M16",
   about:
-    "Backend Developer with expertise in building scalable, high-performance systems and microservices architecture. Passionate about optimizing databases, real-time data processing, and designing efficient APIs.",
+    "Backend Developer with 1+ years of experience in building scalable microservices.",
+  goal: "Become a Backend Lead within 2 years, leading system architecture and mentoring team members.",
   summary:
     "Specializing in backend development, I build robust, high-performance systems using technologies like NestJS, Spring Boot, Kafka, and gRPC. I have experience across diverse domains such as logistics, healthcare, and restaurant management, focusing on optimizing database queries, integrating real-time data streaming, and implementing scalable microservices. My expertise extends to SQL and NoSQL databases like MariaDB, MongoDB, and SingleStore, ensuring efficient data management. I am committed to exploring new technologies to enhance system efficiency and drive business success.",
   avatarUrl: "/Vu1.jpg",
@@ -74,13 +75,11 @@ export const RESUME_DATA = {
             "Docker",
           ],
           description:
-            "A comprehensive ERP system tailored for a wedding banquet restaurant, managing bookings, event scheduling, purchasing, inventory, and assets.",
+            "ERP system for wedding banquet restaurant: contracts, events, purchasing, inventory.",
           tasks: [
-            "Developed a desktop application for ZKTeco device management, integrating a frontend (React, Tauri/Rust) with a backend API (Flask/Python).",
-            "Designed and implemented a multi-level approval workflow for procurement, streamlining the purchasing process across departments.",
-            "Engineered a complete inventory module covering the entire material lifecycle: from raw material intake (with multi-unit handling) to semi-processed goods, recipe quantification, and final dish costing.",
-            "Developed core inventory operations including stock-taking, balance adjustments, returns, and spoilage write-offs, ensuring accurate real-time stock levels.",
-            "Add inventory transfer functionality for moving stock between branches.",
+            "Desktop app for ZKTeco attendance device integration in HR module",
+            "Multi-level approval workflow for procurement",
+            "Full inventory module: material lifecycle, stock operations, and inter-branch transfers",
           ],
           logo: ConsultlyLogo,
           link: {
@@ -105,13 +104,11 @@ export const RESUME_DATA = {
             "Docker",
           ],
           description:
-            "A specialized Clinic ERP system that handles appointment scheduling, consultation procedures, and inventory management.",
+            "Clinic ERP system: appointment scheduling, treatment procedures, and inventory.",
           tasks: [
-            "Developed the `his-connector` microservice to ensure seamless, real-time data synchronization with the main web-based Hospital Information System (HIS).",
-            "Built an advanced booking system for efficient appointment scheduling and patient management.",
-            "Integrated VNPT Invoice for automated electronic invoicing, streamlining the clinic's billing processes.",
-            "Developed a campaign management module (frontend and backend) for targeted patient outreach.",
-            "Automated patient communication by implementing ZNS (Zalo Notification Service) for appointment reminders and follow-up care instructions.",
+            "Core clinic service: booking, treatment scheduling, and patient care workflow",
+            "VNPT and MISA invoice integration for e-invoicing",
+            "CRM with campaign management and automated notifications (ZNS, Email)",
           ],
           logo: ConsultlyLogo,
           link: {
@@ -133,12 +130,11 @@ export const RESUME_DATA = {
             "Microservices",
           ],
           description:
-            "Cofast Network is an advanced digital freight platform that connects freight forwarders with suppliers in the logistics industry. The system is built with features for transportation management, consolidation, e-commerce, and cross-border services, ensuring high performance, flexibility, and security.",
+            "Digital freight platform connecting forwarders with suppliers for air and sea shipping.",
           tasks: [
-            "Developed and maintained the User Service in a microservices architecture using NestJS, gRPC, and Kafka.",
-            "Implemented search and indexing features for the routed search system using ElasticSearch to improve data retrieval efficiency.",
-            "Optimized database queries and integrated Redis for caching to enhance system performance.",
-            "Collaborated with the backend team to design scalable and secure solutions for cross-border logistics management.",
+            "User management with authentication and subscription",
+            "Freight & route search engine for logistics platform",
+            "Complex freight data management for air and sea shipping",
           ],
           logo: ConsultlyLogo,
           link: {
@@ -179,6 +175,18 @@ export const RESUME_DATA = {
       "SingleStore",
     ],
     "DevOps & Tools": ["Docker", "Git"],
+    "Soft Skills": [
+      "Team Communication",
+      "Research",
+      "AI-assisted Development",
+    ],
   },
+  references: [
+    {
+      name: "Ha Quoc Ngan",
+      title: "Project Manager",
+      phone: "0775671927",
+    },
+  ],
   projects: [],
 } as const;
