@@ -26,7 +26,9 @@ export function ProjectCard({
   const tasksArray = Array.isArray(tasks) ? tasks : [tasks];
 
   return (
-    <div className={`relative pb-6 pl-6 print:pb-2 ${isLast ? "pb-0" : ""}`}>
+    <div
+      className={`relative pb-6 pl-6 print:pb-1.5 print:pl-5 ${isLast ? "pb-0" : ""}`}
+    >
       {/* Timeline Line */}
       <div
         className={`absolute left-0 w-px border-l border-dashed border-gray-300 print:border-black ${
@@ -37,10 +39,10 @@ export function ProjectCard({
       {/* Timeline Dot */}
       <div className="print-force-bg absolute -left-[4.5px] top-1.5 h-2.5 w-2.5 rounded-full border border-gray-400 bg-white print:-left-[4px] print:h-2 print:w-2 print:border-black" />
 
-      <div className="flex flex-col space-y-2 print:space-y-1">
+      <div className="flex flex-col space-y-2 print:space-y-0.5">
         {/* Title & Badge */}
         <div className="flex items-center gap-2">
-          <h3 className="text-base font-semibold leading-none print:text-sm">
+          <h3 className="text-base font-semibold leading-none print:text-[16px]">
             {link ? (
               <a
                 href={link}
@@ -65,7 +67,7 @@ export function ProjectCard({
         </div>
 
         {/* Links (Repo/Demo) - Subtext style */}
-        <div className="flex gap-4 text-base text-gray-900 print:gap-2 print:text-sm print:text-black">
+        <div className="flex gap-4 text-base text-gray-900 print:hidden">
           {repo && (
             <div className="flex gap-1">
               <span className="font-semibold text-foreground/80 print:text-black">
@@ -89,14 +91,14 @@ export function ProjectCard({
         </div>
 
         {/* Description */}
-        <div className="text-pretty text-base text-gray-900 print:text-sm print:leading-tight print:text-black">
+        <div className="text-pretty text-base text-gray-900 print:text-[15px] print:leading-tight print:text-black">
           {description}
         </div>
 
         {/* Tasks */}
         {tasksArray.length > 0 && (
-          <div className="text-pretty text-base text-gray-900 print:text-sm print:leading-tight print:text-black">
-            <ul className="list-none space-y-1 print:space-y-0.5">
+          <div className="text-pretty text-base text-gray-900 print:text-[15px] print:leading-tight print:text-black">
+            <ul className="list-none space-y-1 print:space-y-0">
               {tasksArray.map((task, index) => (
                 <li key={index} className="flex items-start gap-2">
                   <span className="shrink-0 text-gray-900 print:text-black">

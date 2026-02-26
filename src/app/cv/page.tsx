@@ -13,16 +13,18 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="container relative mx-auto scroll-my-12 px-9 py-4 md:p-16 print:m-0 print:block print:w-full print:max-w-none print:p-0">
+    <main className="container relative mx-auto scroll-my-12 px-9 py-4 md:p-16 print:m-0 print:block print:w-full print:max-w-none print:p-0 print:text-[16px]">
       <article className="mx-auto w-full max-w-4xl bg-white print:max-w-none">
         {/* Header */}
-        <header className="mb-6 flex items-center justify-between print:mb-4">
+        <header className="mb-6 flex items-center justify-between print:mb-2">
           <div className="flex-1 space-y-1.5">
-            <h1 className="text-2xl font-bold">{RESUME_DATA.name}</h1>
-            <p className="max-w-md text-pretty  text-base text-gray-900 print:text-black">
+            <h1 className="text-2xl font-bold print:text-xl">
+              {RESUME_DATA.name}
+            </h1>
+            <p className="max-w-md text-pretty text-base text-gray-900 print:text-[16px] print:text-black">
               {RESUME_DATA.about}
             </p>
-            <p className="max-w-md text-pretty text-base text-gray-900 print:text-black">
+            <p className="max-w-md text-pretty text-base text-gray-900 print:text-[16px] print:text-black">
               <span className="font-bold">Goal:</span> {RESUME_DATA.goal}
             </p>
             <p className="max-w-md items-center text-pretty  text-xs text-gray-900">
@@ -89,7 +91,7 @@ export default function Page() {
           </div>
 
           <div className="flex items-center gap-x-4">
-            <Avatar className="h-32 w-32 print:h-20 print:w-20">
+            <Avatar className="h-32 w-32 print:h-16 print:w-16">
               <AvatarImage
                 alt={RESUME_DATA.name}
                 src={RESUME_DATA.avatarUrl}
@@ -101,12 +103,15 @@ export default function Page() {
         </header>
 
         {/* Skills */}
-        <div className="mb-6 print:mb-4">
-          <h2 className="mb-3 text-xl font-bold print:mb-2 print:text-lg">
+        <div className="mb-6 print:mb-2">
+          <h2 className="mb-3 text-xl font-bold print:mb-1.5 print:text-lg">
             Skills
           </h2>
           {Object.entries(RESUME_DATA.skills).map(([category, skills]) => (
-            <p key={category} className="mb-1 text-base print:mb-0.5">
+            <p
+              key={category}
+              className="mb-1 text-base print:mb-0 print:text-[16px] print:leading-snug"
+            >
               <span className="font-semibold">{category}:</span>{" "}
               <span className="text-gray-900">{skills.join(", ")}</span>
             </p>
@@ -114,13 +119,13 @@ export default function Page() {
         </div>
 
         {/* Work Experience */}
-        <div className="mb-6 print:mb-4">
-          <h2 className="mb-3 text-xl font-bold print:mb-2 print:text-lg">
+        <div className="mb-6 print:mb-2">
+          <h2 className="mb-3 text-xl font-bold print:mb-1.5 print:text-lg">
             Work Experience
           </h2>
           {RESUME_DATA.work.map((work) => (
-            <div key={work.company} className="mb-4 print:mb-3">
-              <div className="flex items-center justify-between text-base">
+            <div key={work.company} className="mb-4 print:mb-1">
+              <div className="flex items-center justify-between text-base print:text-[16px]">
                 <h3 className="font-semibold">
                   <a className="hover:underline" href={work.link}>
                     {work.company}
@@ -130,7 +135,7 @@ export default function Page() {
                   {work.start} - {work.end}
                 </span>
               </div>
-              <p className=" text-base">{work.title}</p>
+              <p className="text-base print:text-[16px]">{work.title}</p>
 
               {work.repo && (
                 <a
@@ -143,7 +148,7 @@ export default function Page() {
               )}
 
               {"projects" in work && work.projects && (
-                <div className="mt-3 pl-2">
+                <div className="mt-3 pl-2 print:mt-1">
                   {work.projects.map((project, index) => (
                     <ProjectCard
                       key={project.title}
@@ -165,23 +170,25 @@ export default function Page() {
         </div>
 
         {/* Education */}
-        <div className="mb-6 print:mb-4">
-          <h2 className="mb-3 text-xl font-bold print:mb-2 print:text-lg">
+        <div className="mb-6 print:mb-2">
+          <h2 className="mb-3 text-xl font-bold print:mb-1.5 print:text-lg">
             Education
           </h2>
           {RESUME_DATA.education.map((education) => (
             <div key={education.school} className="mb-2">
-              <h3 className="text-base font-semibold">{education.school}</h3>
-              <p className="text-base text-gray-900">
+              <h3 className="text-base font-semibold print:text-[16px]">
+                {education.school}
+              </h3>
+              <p className="text-base text-gray-900 print:text-[16px]">
                 {education.start} - {education.end}
               </p>
-              <p className=" text-sm">{education.degree}</p>
+              <p className="text-sm print:text-[15px]">{education.degree}</p>
             </div>
           ))}
         </div>
 
         {/* References */}
-        {RESUME_DATA.references && RESUME_DATA.references.length > 0 && (
+        {/* {RESUME_DATA.references && RESUME_DATA.references.length > 0 && (
           <div className="mb-6 print:mb-4">
             <h2 className="mb-3 text-xl font-bold print:mb-2 print:text-lg">
               References
@@ -196,7 +203,7 @@ export default function Page() {
               </div>
             ))}
           </div>
-        )}
+        )} */}
       </article>
 
       <PrintDrawer />
