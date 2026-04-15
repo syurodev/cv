@@ -7,7 +7,7 @@ export const RESUME_DATA = {
   location: "Ho Chi Minh City",
   locationLink: "https://maps.app.goo.gl/quhDCmgYQCQJg6M16",
   about:
-    "Backend Developer with 1+ years of experience in building scalable microservices.",
+    "Backend Developer with nearly 3 years of experience in building scalable microservices.",
   goal: "Become a Backend Lead within 2 years, leading system architecture and mentoring team members.",
   summary:
     "Specializing in backend development, I build robust, high-performance systems using technologies like NestJS, Spring Boot, Kafka, and gRPC. I have experience across diverse domains such as logistics, healthcare, and restaurant management, focusing on optimizing database queries, integrating real-time data streaming, and implementing scalable microservices. My expertise extends to SQL and NoSQL databases like MariaDB, MongoDB, and SingleStore, ensuring efficient data management. I am committed to exploring new technologies to enhance system efficiency and drive business success.",
@@ -46,22 +46,21 @@ export const RESUME_DATA = {
   ],
   work: [
     {
-      company: "OVERATE-VNTECH COMPANY",
-      link: "https://www.linkedin.com/company/techres-seemt/",
+      company: "OVERATE-VNTECH COMPANY / OHQ Software",
+      link: "https://vn.linkedin.com/company/ohq-software-vietnam",
       badges: ["Backend Developer"],
       title: "Backend Developer",
       logo: ParabolLogo,
-      start: "11/03/2024",
+      start: "07/2023",
       end: "Present",
       description:
-        "Implement a backend system for restaurant business operations and outsourcing using technologies such as NodeJS, NestJS, Java, Spring Boot, gRPC, Kafka, Redis, ElasticSearch, MongoDB, MariaDB, SingleStore, and Docker.",
+        "Designed and developed backend systems for restaurant business operations and outsourcing projects. Worked in Agile/Scrum teams, participating in sprint planning, code reviews, and technical discussions. Responsible for system architecture design, API development, database optimization, and CI/CD pipeline setup. Tech stack includes NodeJS, NestJS, Java, Spring Boot, gRPC, Kafka, Redis, ElasticSearch, MongoDB, MariaDB, SingleStore, and Docker.",
       repo: "",
       projects: [
         {
           title: "DaiHy",
           status: "",
           techStack: [
-            "Java",
             "Spring Boot",
             "NestJS",
             "Tauri",
@@ -72,14 +71,17 @@ export const RESUME_DATA = {
             "SQLite",
             "Redis",
             "Microservices",
-            "Docker",
           ],
+          teamSize: 9,
           description:
-            "ERP system for wedding banquet restaurant: contracts, events, purchasing, inventory.",
+            "A comprehensive ERP system for a wedding banquet restaurant chain, covering the full business lifecycle including contract management, event coordination, procurement, inventory control, and human resources.",
           tasks: [
-            "Desktop app for ZKTeco attendance device integration in HR module",
-            "Multi-level approval workflow for procurement",
-            "Full inventory module: material lifecycle, stock operations, and inter-branch transfers",
+            "Designed and built the HR module from scratch: employee profiles, organizational structure, department and position management with role-based access control",
+            "Implemented attendance tracking system with multiple check-in methods (fingerprint machine, mobile app) and automated overtime calculation",
+            "Developed payroll engine with configurable salary formulas, tax deductions, insurance contributions, and monthly payslip generation",
+            "Built multi-level approval workflow for procurement requests with configurable approval chains based on purchase amount and department hierarchy",
+            "Designed the full inventory module covering the material lifecycle: purchase orders, goods receiving, quality inspection, stock-in/stock-out, and inter-branch transfers",
+            "Implemented real-time stock monitoring with low-stock alerts and automated reorder suggestions based on historical consumption data",
           ],
           logo: ConsultlyLogo,
           link: {
@@ -88,11 +90,11 @@ export const RESUME_DATA = {
             href: "",
           },
         },
+
         {
           title: "Chiro",
           status: "",
           techStack: [
-            "NodeJS",
             "ReactJS",
             "NestJS",
             "Kafka",
@@ -101,14 +103,16 @@ export const RESUME_DATA = {
             "MongoDB",
             "Redis",
             "Microservices",
-            "Docker",
+            "GitLab CI",
           ],
+          teamSize: 6,
           description:
-            "Clinic ERP system: appointment scheduling, treatment procedures, and inventory.",
+            "A full-featured ERP system for a chain of aesthetic clinics, managing the end-to-end patient journey from booking to treatment, along with inventory management, invoicing, and customer relationship management.",
           tasks: [
             "Core clinic service: booking, treatment scheduling, and patient care workflow",
             "VNPT and MISA invoice integration for e-invoicing",
             "CRM with campaign management and automated notifications (ZNS, Email)",
+            "Built full CI/CD pipeline using GitLab Runner for the entire project",
           ],
           logo: ConsultlyLogo,
           link: {
@@ -117,6 +121,7 @@ export const RESUME_DATA = {
             href: "",
           },
         },
+
         {
           title: "Cofast",
           status: "",
@@ -129,8 +134,9 @@ export const RESUME_DATA = {
             "ElasticSearch",
             "Microservices",
           ],
+          teamSize: 10,
           description:
-            "Digital freight platform connecting forwarders with suppliers for air and sea shipping.",
+            "A digital logistics platform that connects freight forwarders with shipping suppliers, enabling efficient search, comparison, and booking of air and sea freight routes across global markets.",
           tasks: [
             "User management with authentication and subscription",
             "Freight & route search engine for logistics platform",
@@ -150,20 +156,13 @@ export const RESUME_DATA = {
     Backend: [
       "Java",
       "Spring Boot",
-      "NestJS",
       "Node.js",
+      "NestJS",
       "Microservices",
       "gRPC",
       "Kafka",
     ],
-    Frontend: [
-      "ReactJS",
-      "Next.js",
-      "TypeScript",
-      "JavaScript",
-      "Tailwind CSS",
-      "Tauri",
-    ],
+    Frontend: ["ReactJS", "TypeScript", "JavaScript", "Tailwind CSS", "Tauri"],
     Database: [
       "PostgreSQL",
       "MySQL",
@@ -172,9 +171,8 @@ export const RESUME_DATA = {
       "Redis",
       "Elastic Search",
       "MongoDB",
-      "SingleStore",
     ],
-    "DevOps & Tools": ["Docker", "Git"],
+    "DevOps & Tools": ["Docker", "Git", "GitLab CI"],
     "Soft Skills": [
       "Team Communication",
       "Research",

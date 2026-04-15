@@ -8,6 +8,7 @@ interface Props {
   link?: string;
   repo?: string;
   status?: string;
+  teamSize?: number;
   isFirst?: boolean;
   isLast?: boolean;
 }
@@ -20,6 +21,7 @@ export function ProjectCard({
   repo,
   tasks,
   status,
+  teamSize,
   isFirst = false,
   isLast = false,
 }: Props) {
@@ -94,6 +96,13 @@ export function ProjectCard({
         <div className="text-pretty text-base text-gray-900 print:text-[15px] print:leading-tight print:text-black">
           {description}
         </div>
+
+        {/* Team Size */}
+        {teamSize && (
+          <div className="text-base text-gray-900 print:text-[15px] print:leading-tight print:text-black">
+            <span className="font-semibold">Team size:</span> {teamSize} members (including FE, BE, QC, BA)
+          </div>
+        )}
 
         {/* Tasks */}
         {tasksArray.length > 0 && (

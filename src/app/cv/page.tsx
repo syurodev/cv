@@ -17,17 +17,17 @@ export default function Page() {
       <article className="mx-auto w-full max-w-4xl bg-white print:max-w-none">
         {/* Header */}
         <header className="mb-6 flex items-center justify-between print:mb-2">
-          <div className="flex-1 space-y-1.5">
+          <div className="space-y-1.5">
             <h1 className="text-2xl font-bold print:text-xl">
               {RESUME_DATA.name}
             </h1>
-            <p className="max-w-md text-pretty text-base text-gray-900 print:text-[16px] print:text-black">
+            <p className="text-pretty text-base text-gray-900 print:text-[16px] print:text-black">
               {RESUME_DATA.about}
             </p>
-            <p className="max-w-md text-pretty text-base text-gray-900 print:text-[16px] print:text-black">
+            <p className="text-pretty text-base text-gray-900 print:text-[16px] print:text-black">
               <span className="font-bold">Goal:</span> {RESUME_DATA.goal}
             </p>
-            <p className="max-w-md items-center text-pretty  text-xs text-gray-900">
+            <p className="items-center text-pretty  text-xs text-gray-900">
               <a
                 className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
                 href={RESUME_DATA.locationLink}
@@ -159,6 +159,7 @@ export default function Page() {
                       link={"link" in project ? project.link?.href : undefined}
                       repo={"link" in project ? project.link?.repo : undefined}
                       status={project.status}
+                      teamSize={"teamSize" in project ? project.teamSize : undefined}
                       isFirst={index === 0}
                       isLast={index === (work.projects?.length ?? 0) - 1}
                     />
@@ -188,22 +189,22 @@ export default function Page() {
         </div>
 
         {/* References */}
-        {/* {RESUME_DATA.references && RESUME_DATA.references.length > 0 && (
-          <div className="mb-6 print:mb-4">
-            <h2 className="mb-3 text-xl font-bold print:mb-2 print:text-lg">
+         {RESUME_DATA.references && RESUME_DATA.references.length > 0 && (
+          <div className="mb-6 print:mb-2">
+            <h2 className="mb-3 text-xl font-bold print:mb-1.5 print:text-lg">
               References
             </h2>
             {RESUME_DATA.references.map((ref) => (
               <div key={ref.name} className="mb-2">
-                <h3 className="text-base font-semibold">{ref.name}</h3>
-                <p className="text-base text-gray-900">{ref.title}</p>
-                <p className="text-sm text-gray-900">
+                <h3 className="text-base font-semibold print:text-[16px]">{ref.name}</h3>
+                <p className="text-base text-gray-900 print:text-[16px]">{ref.title}</p>
+                <p className="text-sm text-gray-900 print:text-[15px]">
                   Phone: {ref.phone ?? ""}
                 </p>
               </div>
             ))}
           </div>
-        )} */}
+        )}
       </article>
 
       <PrintDrawer />
