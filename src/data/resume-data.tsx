@@ -7,7 +7,7 @@ export const RESUME_DATA = {
   location: "Ho Chi Minh City",
   locationLink: "https://maps.app.goo.gl/quhDCmgYQCQJg6M16",
   about:
-    "Backend Developer with nearly 3 years of experience in building scalable microservices.",
+    "Backend Developer with nearly 3 years of experience in designing and building scalable backend systems and microservices architectures. Proficient in Java, Spring Boot, Node.js, NestJS, and event-driven systems with Kafka and gRPC. Experienced with PostgreSQL, MySQL, MongoDB, Redis, and Elasticsearch. Skilled in API design, business logic implementation, and CI/CD workflows using Docker and Git. Passionate about leveraging AI-assisted tools to boost productivity and code quality.",
   goal: "Become a Backend Lead within 2 years, leading system architecture and mentoring team members.",
   summary:
     "Specializing in backend development, I build robust, high-performance systems using technologies like NestJS, Spring Boot, Kafka, and gRPC. I have experience across diverse domains such as logistics, healthcare, and restaurant management, focusing on optimizing database queries, integrating real-time data streaming, and implementing scalable microservices. My expertise extends to SQL and NoSQL databases like MariaDB, MongoDB, and SingleStore, ensuring efficient data management. I am committed to exploring new technologies to enhance system efficiency and drive business success.",
@@ -58,7 +58,7 @@ export const RESUME_DATA = {
       repo: "",
       projects: [
         {
-          title: "DaiHy",
+          title: "Đại Hỷ Palace ERP",
           status: "",
           techStack: [
             "Spring Boot",
@@ -92,7 +92,7 @@ export const RESUME_DATA = {
         },
 
         {
-          title: "Chiro",
+          title: "Chiro Lifestyle Medicine ERP",
           status: "",
           techStack: [
             "ReactJS",
@@ -109,10 +109,13 @@ export const RESUME_DATA = {
           description:
             "A full-featured ERP system for a chain of aesthetic clinics, managing the end-to-end patient journey from booking to treatment, along with inventory management, invoicing, and customer relationship management.",
           tasks: [
-            "Core clinic service: booking, treatment scheduling, and patient care workflow",
-            "VNPT and MISA invoice integration for e-invoicing",
-            "CRM with campaign management and automated notifications (ZNS, Email)",
-            "Built full CI/CD pipeline using GitLab Runner for the entire project",
+            "Designed and developed the core clinic service: appointment booking, treatment scheduling, patient reception, and end-to-end patient care workflow management",
+            "Built treatment plan module with multi-session scheduling, doctor assignment, and progress tracking across clinic branches",
+            "Integrated VNPT and MISA e-invoicing APIs for automated invoice generation, ensuring compliance with Vietnamese tax regulations",
+            "Developed CRM module with marketing campaign management, customer segmentation, and loyalty program tracking",
+            "Built high-throughput notification system supporting automated ZNS and Email campaigns, capable of handling peak loads of ~10,000 messages concurrently using Kafka-based message queuing",
+            "Implemented inventory management for clinic supplies and pharmaceutical products with batch tracking and expiry date monitoring",
+            "Set up and maintained full CI/CD pipeline using GitLab Runner with automated testing, Docker image building, and deployment for the entire microservices project",
           ],
           logo: ConsultlyLogo,
           link: {
@@ -138,9 +141,12 @@ export const RESUME_DATA = {
           description:
             "A digital logistics platform that connects freight forwarders with shipping suppliers, enabling efficient search, comparison, and booking of air and sea freight routes across global markets.",
           tasks: [
-            "User management with authentication and subscription",
-            "Freight & route search engine for logistics platform",
-            "Complex freight data management for air and sea shipping",
+            "Built user management system with JWT-based authentication, role-based authorization, and tiered subscription plans for forwarders and suppliers",
+            "Developed freight and route search engine powered by ElasticSearch, supporting multi-criteria filtering (origin, destination, carrier, transit time, price) with real-time indexing of shipping data",
+            "Designed and implemented complex freight data management for both air and sea shipping: rate cards, surcharges, container types, transit schedules, and carrier contracts",
+            "Built supplier onboarding and profile management module with document verification and approval workflow",
+            "Developed notification and alert system for rate updates, booking confirmations, and shipment status changes via Kafka event streaming",
+            "Designed RESTful and gRPC APIs for inter-service communication across the microservices architecture, ensuring high availability and low latency",
           ],
           logo: ConsultlyLogo,
           link: {

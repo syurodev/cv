@@ -29,7 +29,7 @@ export function ProjectCard({
 
   return (
     <div
-      className={`relative pb-6 pl-6 print:pb-1.5 print:pl-5 ${isLast ? "pb-0" : ""}`}
+      className={`relative pb-6 pl-6 print:pb-3 print:pl-5 ${isLast ? "pb-0" : ""}`}
     >
       {/* Timeline Line */}
       <div
@@ -93,29 +93,42 @@ export function ProjectCard({
         </div>
 
         {/* Description */}
-        <div className="text-pretty text-base text-gray-900 print:text-[15px] print:leading-tight print:text-black">
+        <div className="text-pretty text-base text-gray-900 print:text-[15px] print:leading-snug print:text-black">
           {description}
         </div>
 
         {/* Team Size */}
         {teamSize && (
-          <div className="text-base text-gray-900 print:text-[15px] print:leading-tight print:text-black">
+          <div className="text-base text-gray-900 print:text-[15px] print:leading-snug print:text-black">
             <span className="font-semibold">Team size:</span> {teamSize} members (including FE, BE, QC, BA)
           </div>
         )}
 
         {/* Tasks */}
         {tasksArray.length > 0 && (
-          <div className="text-pretty text-base text-gray-900 print:text-[15px] print:leading-tight print:text-black">
+          <div className="text-pretty text-base text-gray-900 print:text-[15px] print:leading-snug print:text-black">
             <ul className="list-none space-y-1 print:space-y-0">
-              {tasksArray.map((task, index) => (
-                <li key={index} className="flex items-start gap-2">
-                  <span className="shrink-0 text-gray-900 print:text-black">
-                    -
-                  </span>
-                  <span>{task}</span>
-                </li>
-              ))}
+              {tasksArray.map((task, index) => {
+                const colonIndex = task.indexOf(":");
+                const hasColon = colonIndex !== -1;
+                return (
+                  <li key={index} className="flex items-start gap-2">
+                    <span className="shrink-0 text-gray-900 print:text-black">
+                      -
+                    </span>
+                    <span>
+                      {hasColon ? (
+                        <>
+                          <span className="font-semibold">{task.slice(0, colonIndex)}</span>
+                          {task.slice(colonIndex)}
+                        </>
+                      ) : (
+                        task
+                      )}
+                    </span>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         )}

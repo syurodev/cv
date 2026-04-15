@@ -16,7 +16,7 @@ export default function Page() {
     <main className="container relative mx-auto scroll-my-12 px-9 py-4 md:p-16 print:m-0 print:block print:w-full print:max-w-none print:p-0 print:text-[16px]">
       <article className="mx-auto w-full max-w-4xl bg-white print:max-w-none">
         {/* Header */}
-        <header className="mb-6 flex items-center justify-between print:mb-2">
+        <header className="mb-6 flex items-start justify-between gap-6 print:mb-2">
           <div className="space-y-1.5">
             <h1 className="text-2xl font-bold print:text-xl">
               {RESUME_DATA.name}
@@ -90,7 +90,7 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="flex items-center gap-x-4">
+          <div className="shrink-0">
             <Avatar className="h-32 w-32 print:h-16 print:w-16">
               <AvatarImage
                 alt={RESUME_DATA.name}
