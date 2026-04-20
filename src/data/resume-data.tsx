@@ -7,7 +7,7 @@ export const RESUME_DATA = {
   location: "Ho Chi Minh City",
   locationLink: "https://maps.app.goo.gl/quhDCmgYQCQJg6M16",
   about:
-    "Backend Developer with nearly 3 years of experience in designing and building scalable backend systems and microservices architectures. Proficient in Java, Spring Boot, Node.js, NestJS, and event-driven systems with Kafka and gRPC. Experienced with PostgreSQL, MySQL, MongoDB, Redis, and Elasticsearch. Skilled in API design, business logic implementation, and CI/CD workflows using Docker and Git. Passionate about leveraging AI-assisted tools to boost productivity and code quality.",
+    "Backend Developer with nearly 3 years of experience building scalable microservices using Java, Spring Boot, NestJS, Kafka, and gRPC. Experienced with PostgreSQL, MariaDB, MongoDB, Redis, and Elasticsearch. Passionate about clean system design and leveraging AI tools to boost productivity.",
   goal: "Become a Backend Lead within 2 years, leading system architecture and mentoring team members.",
   summary:
     "Specializing in backend development, I build robust, high-performance systems using technologies like NestJS, Spring Boot, Kafka, and gRPC. I have experience across diverse domains such as logistics, healthcare, and restaurant management, focusing on optimizing database queries, integrating real-time data streaming, and implementing scalable microservices. My expertise extends to SQL and NoSQL databases like MariaDB, MongoDB, and SingleStore, ensuring efficient data management. I am committed to exploring new technologies to enhance system efficiency and drive business success.",
@@ -157,6 +157,38 @@ export const RESUME_DATA = {
         },
       ],
     },
+    {
+      company: "VNPT Cần Thơ",
+      link: "",
+      badges: ["Intern"],
+      title: "Full Stack Developer Intern",
+      logo: ParabolLogo,
+      start: "05/2023",
+      end: "06/2023",
+      description:
+        "Interned as a full stack developer, building a tech kiosk management web application. Responsible for designing RESTful APIs, database modeling, and developing the frontend. Tech stack includes ExpressJS, MongoDB, and ReactJS.",
+      repo: "",
+      projects: [
+        {
+          title: "Tech Kiosk Management System",
+          status: "",
+          techStack: ["ExpressJS", "MongoDB", "ReactJS"],
+          teamSize: 2,
+          description:
+            "A web-based management system for tech kiosks, supporting product catalog management, inventory tracking, and sales reporting.",
+          tasks: [
+            "Designed and implemented RESTful APIs for product, inventory, and sales management",
+            "Built the frontend dashboard with ReactJS for real-time inventory and sales reporting",
+          ],
+          logo: ConsultlyLogo,
+          link: {
+            label: "",
+            repo: "",
+            href: "",
+          },
+        },
+      ],
+    },
   ],
   skills: {
     Backend: [
@@ -185,12 +217,12 @@ export const RESUME_DATA = {
       "AI-assisted Development",
     ],
   },
-  references: [
-    {
-      name: "Ha Quoc Ngan",
-      title: "Project Manager",
-      phone: "0775671927",
-    },
-  ],
+  // references: [
+  //   {
+  //     name: "Ha Quoc Ngan",
+  //     title: "Project Manager",
+  //     phone: "0775671927",
+  //   },
+  // ],
   projects: [],
 } as const;
