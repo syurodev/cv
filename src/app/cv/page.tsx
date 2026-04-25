@@ -8,7 +8,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: `${RESUME_DATA.name} | ${RESUME_DATA.about}`,
-  description: RESUME_DATA.summary,
+  description: RESUME_DATA.about,
 };
 
 export default function Page() {
@@ -91,7 +91,7 @@ export default function Page() {
           </div>
 
           <div className="shrink-0">
-            <Avatar className="h-32 w-32 print:h-16 print:w-16">
+            <Avatar className="mt-10 h-32 w-32 print:h-16 print:w-16">
               <AvatarImage
                 alt={RESUME_DATA.name}
                 src={RESUME_DATA.avatarUrl}
@@ -148,7 +148,7 @@ export default function Page() {
               )}
 
               {"projects" in work && work.projects && (
-                <div className="mt-3 pl-2 print:mt-1">
+                <div className="mt-3 pl-2 print:mt-3">
                   {work.projects.map((project, index) => (
                     <ProjectCard
                       key={project.title}
@@ -159,7 +159,9 @@ export default function Page() {
                       link={"link" in project ? project.link?.href : undefined}
                       repo={"link" in project ? project.link?.repo : undefined}
                       status={project.status}
-                      teamSize={"teamSize" in project ? project.teamSize : undefined}
+                      teamSize={
+                        "teamSize" in project ? project.teamSize : undefined
+                      }
                       isFirst={index === 0}
                       isLast={index === (work.projects?.length ?? 0) - 1}
                     />
@@ -189,15 +191,19 @@ export default function Page() {
         </div>
 
         {/* References */}
-         {RESUME_DATA.references && RESUME_DATA.references.length > 0 && (
+        {RESUME_DATA.references && RESUME_DATA.references.length > 0 && (
           <div className="mb-6 print:mb-2">
             <h2 className="mb-3 text-xl font-bold print:mb-1.5 print:text-lg">
               References
             </h2>
             {RESUME_DATA.references.map((ref) => (
               <div key={ref.name} className="mb-2">
-                <h3 className="text-base font-semibold print:text-[16px]">{ref.name}</h3>
-                <p className="text-base text-gray-900 print:text-[16px]">{ref.title}</p>
+                <h3 className="text-base font-semibold print:text-[16px]">
+                  {ref.name}
+                </h3>
+                <p className="text-base text-gray-900 print:text-[16px]">
+                  {ref.title}
+                </p>
                 <p className="text-sm text-gray-900 print:text-[15px]">
                   Phone: {ref.phone ?? ""}
                 </p>

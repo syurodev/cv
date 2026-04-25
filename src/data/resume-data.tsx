@@ -1,4 +1,4 @@
-import { FacebookIcon, GitHubIcon } from "@/components/icons";
+import { GitHubIcon } from "@/components/icons";
 import { ConsultlyLogo, ParabolLogo } from "@/images/logos";
 
 export const RESUME_DATA = {
@@ -7,10 +7,8 @@ export const RESUME_DATA = {
   location: "Ho Chi Minh City",
   locationLink: "https://maps.app.goo.gl/quhDCmgYQCQJg6M16",
   about:
-    "Backend Developer with nearly 3 years of experience building scalable microservices using Java, Spring Boot, NestJS, Kafka, and gRPC. Experienced with PostgreSQL, MariaDB, MongoDB, Redis, and Elasticsearch. Passionate about clean system design and leveraging AI tools to boost productivity.",
+    "Backend Engineer with ~3 years of experience building scalable microservices using Java (Spring Boot) and Node.js (NestJS). Experienced in Kafka, gRPC, and database systems including MariaDB, MongoDB, and Redis. Focused on building reliable backend services and optimizing data processing for business applications.",
   goal: "Become a Backend Lead within 2 years, leading system architecture and mentoring team members.",
-  summary:
-    "Specializing in backend development, I build robust, high-performance systems using technologies like NestJS, Spring Boot, Kafka, and gRPC. I have experience across diverse domains such as logistics, healthcare, and restaurant management, focusing on optimizing database queries, integrating real-time data streaming, and implementing scalable microservices. My expertise extends to SQL and NoSQL databases like MariaDB, MongoDB, and SingleStore, ensuring efficient data management. I am committed to exploring new technologies to enhance system efficiency and drive business success.",
   avatarUrl: "/Vu1.jpg",
   // personalWebsiteUrl: "https://jarocki.me",
   contact: {
@@ -21,16 +19,6 @@ export const RESUME_DATA = {
         name: "GitHub",
         url: "https://github.com/syurodev",
         icon: GitHubIcon,
-      },
-      // {
-      //   name: "LinkedIn",
-      //   url: "https://www.linkedin.com/in/bjarocki/",
-      //   icon: LinkedInIcon,
-      // },
-      {
-        name: "Facebook",
-        url: "https://www.facebook.com/phamvu1901/",
-        icon: FacebookIcon,
       },
     ],
   },
@@ -52,9 +40,9 @@ export const RESUME_DATA = {
       title: "Backend Developer",
       logo: ParabolLogo,
       start: "07/2023",
-      end: "Present",
+      end: "01/2026",
       description:
-        "Designed and developed backend systems for restaurant business operations and outsourcing projects. Worked in Agile/Scrum teams, participating in sprint planning, code reviews, and technical discussions. Responsible for system architecture design, API development, database optimization, and CI/CD pipeline setup. Tech stack includes NodeJS, NestJS, Java, Spring Boot, gRPC, Kafka, Redis, ElasticSearch, MongoDB, MariaDB, SingleStore, and Docker.",
+        "Backend Engineer building scalable ERP and logistics systems using microservices architecture (Kafka, gRPC). Focused on system design, high-throughput data processing, and complex business workflows across supply chain, inventory, and CRM domains.",
       repo: "",
       projects: [
         {
@@ -74,14 +62,11 @@ export const RESUME_DATA = {
           ],
           teamSize: 9,
           description:
-            "A comprehensive ERP system for a wedding banquet restaurant chain, covering the full business lifecycle including contract management, event coordination, procurement, inventory control, and human resources.",
+            "ERP system for a wedding banquet restaurant chain covering contract management, event operations, procurement, inventory, and HR.",
           tasks: [
-            "Designed and built the HR module from scratch: employee profiles, organizational structure, department and position management with role-based access control",
-            "Implemented attendance tracking system with multiple check-in methods (fingerprint machine, mobile app) and automated overtime calculation",
-            "Developed payroll engine with configurable salary formulas, tax deductions, insurance contributions, and monthly payslip generation",
-            "Built multi-level approval workflow for procurement requests with configurable approval chains based on purchase amount and department hierarchy",
-            "Designed the full inventory module covering the material lifecycle: purchase orders, goods receiving, quality inspection, stock-in/stock-out, and inter-branch transfers",
-            "Implemented real-time stock monitoring with low-stock alerts and automated reorder suggestions based on historical consumption data",
+            "Designed HR module with RBAC: employee management, multi-source attendance tracking, and configurable payroll (tax, insurance, overtime).",
+            "Built procurement workflow: configurable multi-level approval chains based on amount and organizational hierarchy.",
+            "Implemented end-to-end inventory system: procurement → receiving → QC → stock movement, with real-time monitoring and automated reorder suggestions.",
           ],
           logo: ConsultlyLogo,
           link: {
@@ -107,15 +92,59 @@ export const RESUME_DATA = {
           ],
           teamSize: 6,
           description:
-            "A full-featured ERP system for a chain of aesthetic clinics, managing the end-to-end patient journey from booking to treatment, along with inventory management, invoicing, and customer relationship management.",
+            "ERP system for a specialized clinic focused on spine, neurological, and musculoskeletal care, managing the end-to-end patient workflow, inventory, invoicing, and CRM.",
           tasks: [
-            "Designed and developed the core clinic service: appointment booking, treatment scheduling, patient reception, and end-to-end patient care workflow management",
-            "Built treatment plan module with multi-session scheduling, doctor assignment, and progress tracking across clinic branches",
-            "Integrated VNPT and MISA e-invoicing APIs for automated invoice generation, ensuring compliance with Vietnamese tax regulations",
-            "Developed CRM module with marketing campaign management, customer segmentation, and loyalty program tracking",
-            "Built high-throughput notification system supporting automated ZNS and Email campaigns, capable of handling peak loads of ~10,000 messages concurrently using Kafka-based message queuing",
-            "Implemented inventory management for clinic supplies and pharmaceutical products with batch tracking and expiry date monitoring",
-            "Set up and maintained full CI/CD pipeline using GitLab Runner with automated testing, Docker image building, and deployment for the entire microservices project",
+            "Developed core clinic service: appointment booking, treatment planning, and patient care workflows.",
+            "Built POS and invoicing system integrated with VNPT/MISA e-invoicing APIs.",
+            "Implemented inventory management aligned with POS workflows for stock tracking and replenishment.",
+            "Developed CRM module supporting patient engagement and marketing campaigns.",
+            "Built high-throughput notification system (ZNS/Email) using Kafka (~10k concurrent messages).",
+            // "Maintained CI/CD pipelines using GitLab Runner.",
+          ],
+          logo: ConsultlyLogo,
+          link: {
+            label: "",
+            repo: "",
+            href: "",
+          },
+        },
+        {
+          title: "ZooDoo ERP",
+          techStack: [
+            "Spring Boot",
+            "NestJS",
+            "MariaDB",
+            "Redis",
+            "gRPC",
+            "Microservices",
+          ],
+          teamSize: 6,
+          description:
+            "ERP system for zoo management, supporting operational workflows, asset management, and facility tracking.",
+          tasks: [
+            "Implemented asset management system covering full lifecycle: procurement, allocation, maintenance, depreciation, and decommissioning.",
+            "Designed asset tracking workflows across departments and branches, including assignment, transfer, and auditing.",
+            "Developed asset depreciation and maintenance scheduling logic for lifecycle cost tracking and operational planning.",
+          ],
+        },
+        {
+          title: "Supplier System (F&B Ecosystem)",
+          status: "",
+          techStack: [
+            "Spring Boot",
+            "NestJS",
+            "Redis",
+            "gRPC",
+            "MariaDB",
+            "SingleStore",
+            "Microservices",
+          ],
+          teamSize: 6,
+          description:
+            "A supply chain management system focused on streamlining logistics between suppliers and restaurant owners.",
+          tasks: [
+            "Sales & Logistics: Developed order grouping logic based on delivery constraints to optimize supply chain flows and ensure accurate raw material distribution.",
+            "Report: Implemented reporting module for sales, revenue, customer analytics, and material consumption with data aggregation and visualization.",
           ],
           logo: ConsultlyLogo,
           link: {
@@ -141,12 +170,10 @@ export const RESUME_DATA = {
           description:
             "A digital logistics platform that connects freight forwarders with shipping suppliers, enabling efficient search, comparison, and booking of air and sea freight routes across global markets.",
           tasks: [
-            "Built user management system with JWT-based authentication, role-based authorization, and tiered subscription plans for forwarders and suppliers",
-            "Developed freight and route search engine powered by ElasticSearch, supporting multi-criteria filtering (origin, destination, carrier, transit time, price) with real-time indexing of shipping data",
-            "Designed and implemented complex freight data management for both air and sea shipping: rate cards, surcharges, container types, transit schedules, and carrier contracts",
-            "Built supplier onboarding and profile management module with document verification and approval workflow",
-            "Developed notification and alert system for rate updates, booking confirmations, and shipment status changes via Kafka event streaming",
-            "Designed RESTful and gRPC APIs for inter-service communication across the microservices architecture, ensuring high availability and low latency",
+            "Built user management and supplier onboarding system with role-based access and tiered subscription plans.",
+            "Developed ElasticSearch-powered freight search engine with multi-criteria filtering.",
+            "Implemented complex freight data management for air and sea shipping routes.",
+            "Designed RESTful/gRPC APIs and Kafka-based event streaming for inter-service communication.",
           ],
           logo: ConsultlyLogo,
           link: {
@@ -177,8 +204,8 @@ export const RESUME_DATA = {
           description:
             "A web-based management system for tech kiosks, supporting product catalog management, inventory tracking, and sales reporting.",
           tasks: [
-            "Designed and implemented RESTful APIs for product, inventory, and sales management",
-            "Built the frontend dashboard with ReactJS for real-time inventory and sales reporting",
+            "Designed RESTful APIs and database schema for product, inventory, and sales management.",
+            "Built ReactJS dashboard for inventory tracking and sales reporting.",
           ],
           logo: ConsultlyLogo,
           link: {
